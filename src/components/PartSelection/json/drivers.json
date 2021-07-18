@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Mario",
+    "img": "https://mario.wiki.gallery/images/thumb/d/d9/MK8_Mario_Icon.png/96px-MK8_Mario_Icon.png",
+    "stats": {
+      "weight": 6,
+      "acceleration": 2,
+      "onRoadTraction": 4,
+      "offRoadTraction": 2,
+      "miniTurbo": 2,
+      "groundSpeed": 6,
+      "waterSpeed": 6,
+      "antiGravitySpeed": 6,
+      "airSpeed": 6,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Luigi",
+    "img": "https://mario.wiki.gallery/images/thumb/5/51/MK8_Luigi_Icon.png/96px-MK8_Luigi_Icon.png",
+    "stats": {
+      "weight": 6,
+      "acceleration": 2,
+      "onRoadTraction": 5,
+      "offRoadTraction": 1,
+      "miniTurbo": 2,
+      "groundSpeed": 6,
+      "waterSpeed": 6,
+      "antiGravitySpeed": 6,
+      "airSpeed": 6,
+      "groundHandling": 5,
+      "waterHandling": 5,
+      "antiGravityHandling": 5,
+      "airHandling": 5
+    }
+  },
+  {
+    "name": "Peach",
+    "img": "https://mario.wiki.gallery/images/thumb/c/c2/MK8_Peach_Icon.png/96px-MK8_Peach_Icon.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 3,
+      "onRoadTraction": 3,
+      "offRoadTraction": 3,
+      "miniTurbo": 3,
+      "groundSpeed": 5,
+      "waterSpeed": 5,
+      "antiGravitySpeed": 5,
+      "airSpeed": 5,
+      "groundHandling": 5,
+      "waterHandling": 5,
+      "antiGravityHandling": 5,
+      "airHandling": 5
+    }
+  }
+]

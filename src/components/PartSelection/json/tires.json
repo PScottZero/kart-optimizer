@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Standard",
+    "img": "https://mario.wiki.gallery/images/thumb/a/a8/StandardTiresMK8.png/150px-StandardTiresMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 2,
+      "offRoadTraction": 5,
+      "miniTurbo": 3,
+      "groundSpeed": 2,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 2,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Monster",
+    "img": "https://mario.wiki.gallery/images/thumb/2/29/MonsterTiresMK8.png/150px-MonsterTiresMK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 2,
+      "onRoadTraction": 3,
+      "offRoadTraction": 7,
+      "miniTurbo": 2,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 0,
+      "waterHandling": 1,
+      "antiGravityHandling": 0,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Roller",
+    "img": "https://mario.wiki.gallery/images/thumb/7/76/RollerTiresMK8.png/150px-RollerTiresMK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 6,
+      "onRoadTraction": 0,
+      "offRoadTraction": 4,
+      "miniTurbo": 6,
+      "groundSpeed": 0,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 0,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 4
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Super Glider",
+    "img": "https://mario.wiki.gallery/images/thumb/a/a8/SuperGliderMK8.png/150px-SuperGliderMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 1,
+      "onRoadTraction": 1,
+      "offRoadTraction": 1,
+      "miniTurbo": 1,
+      "groundSpeed": 1,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 0,
+      "airSpeed": 2,
+      "groundHandling": 1,
+      "waterHandling": 0,
+      "antiGravityHandling": 1,
+      "airHandling": 1
+    }
+  }
+]

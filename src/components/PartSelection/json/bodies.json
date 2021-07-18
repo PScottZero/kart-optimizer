@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Standard Kart",
+    "img": "https://mario.wiki.gallery/images/thumb/0/05/StandardKartBodyMK8.png/150px-StandardKartBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 3,
+      "offRoadTraction": 3,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Pipe Frame",
+    "img": "https://mario.wiki.gallery/images/thumb/d/d1/PipeFrameBodyMK8.png/150px-PipeFrameBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 6,
+      "onRoadTraction": 3,
+      "offRoadTraction": 4,
+      "miniTurbo": 6,
+      "groundSpeed": 1,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 1,
+      "airSpeed": 1,
+      "groundHandling": 5,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Mach 8",
+    "img": "https://mario.wiki.gallery/images/thumb/d/df/Mach8BodyMK8.png/150px-Mach8BodyMK8.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 3,
+      "onRoadTraction": 2,
+      "offRoadTraction": 4,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 5,
+      "airSpeed": 4,
+      "groundHandling": 2,
+      "waterHandling": 2,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  }
+]
