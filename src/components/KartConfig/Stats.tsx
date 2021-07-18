@@ -1,3 +1,15 @@
+export enum SpeedHandlingTerrain {
+  GROUND = "Ground", 
+  WATER = "Water", 
+  ANTI_GRAVITY = "Anti-Gravity", 
+  AIR = "Air"
+}
+
+export enum TractionTerrain {
+  ON_ROAD = "On-Road",
+  OFF_ROAD = "Off-Road",
+}
+
 export class Stats {
   constructor(
     readonly weight: number,
@@ -39,16 +51,4 @@ export class Stats {
       case TractionTerrain.OFF_ROAD: return this.offRoadTraction;
     }
   }
-}
-
-export enum SpeedHandlingTerrain {
-  GROUND = "Ground", 
-  WATER = "Water", 
-  ANTI_GRAVITY = "Anti-Gravity", 
-  AIR = "Air"
-}
-
-export enum TractionTerrain {
-  ON_ROAD = "On-Road",
-  OFF_ROAD = "Off-Road",
 }

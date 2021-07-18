@@ -1,4 +1,5 @@
 .PartSelection {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,5 +8,10 @@
   margin: 0 1rem;
   border-radius: 2rem;
   background: #777;
+  transition: 0.25s;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    background: #666;
+  }
 }
