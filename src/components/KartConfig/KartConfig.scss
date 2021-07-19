@@ -1,19 +1,16 @@
 .KartConfig {
+  grid-area: kart-config;
   display: flex;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
-  padding: 4rem 0;
-  max-width: 100%;
-  width: 60rem;
-  min-width: 30rem;
-  background: #444;
-  margin: auto;
-  border-radius: 2rem;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
 }
 
 .CenterContainer {
   width: 40rem;
+  height: 42.25rem;
 }
 
 .PartOptions {
@@ -23,7 +20,7 @@
 .Separator {
   width: calc(100% - 1rem);
   height: 0.25rem;
-  background: #333;
+  background: linear-gradient(to right, #26baff, #f92470);
   border-radius: 1rem;
   margin: 1rem 0.5rem;
 }

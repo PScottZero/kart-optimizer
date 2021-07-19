@@ -1,22 +1,33 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import drivers from './json/drivers.json'
-import bodies from './json/bodies.json'
-import tires from './json/tires.json'
-import gliders from './json/gliders.json'
-import './KartConfig.scss'
-import PartList from '../PartList/PartList'
-import PartSelection from '../PartSelection/PartSelection'
-import { Part } from '../PartTile/Part'
+import drivers from "./json/drivers.json";
+import bodies from "./json/bodies.json";
+import tires from "./json/tires.json";
+import gliders from "./json/gliders.json";
+import "./KartConfig.scss";
+import PartList from "../PartList/PartList";
+import PartSelection from "../PartSelection/PartSelection";
+import { Part, PartType } from "../PartTile/Part";
 
-export default class KartConfig extends Component<{}, {
-  selectedPartList: Part[]
-}> {
+export default class KartConfig extends Component<
+  {},
+  {
+    selectedPartList: Part[];
+    selectedDriver: Part;
+    selectedBody: Part;
+    selectedTire: Part;
+    selectedGlider: Part;
+  }
+> {
   constructor(props: any) {
     super(props);
     this.state = {
-      selectedPartList: drivers
-    }
+      selectedPartList: drivers,
+      selectedDriver: drivers[0],
+      selectedBody: bodies[0],
+      selectedTire: tires[0],
+      selectedGlider: gliders[0],
+    };
   }
 
   render() {
@@ -24,21 +35,69 @@ export default class KartConfig extends Component<{}, {
       <div className="KartConfig">
         <div className="CenterContainer">
           <div className="PartOptions">
-            <PartSelection initialPart={drivers[0]} onClick={() => this.show(drivers)}></PartSelection>
-            <PartSelection initialPart={bodies[0]} onClick={() => this.show(bodies)}></PartSelection>
-            <PartSelection initialPart={tires[0]} onClick={() => this.show(tires)}></PartSelection>
-            <PartSelection initialPart={gliders[0]} onClick={() => this.show(gliders)}></PartSelection>
+            <PartSelection
+              selectedPart={this.state.selectedDriver}
+              onClick={() => this.show(drivers)}
+            ></PartSelection>
+            <PartSelection
+              selectedPart={this.state.selectedBody}
+              onClick={() => this.show(bodies)}
+            ></PartSelection>
+            <PartSelection
+              selectedPart={this.state.selectedTire}
+              onClick={() => this.show(tires)}
+            ></PartSelection>
+            <PartSelection
+              selectedPart={this.state.selectedGlider}
+              onClick={() => this.show(gliders)}
+            ></PartSelection>
           </div>
           <div className="Separator"></div>
-          <PartList partList={this.state.selectedPartList}></PartList>
+          <PartList
+            partList={this.state.selectedPartList}
+            type={this.type()}
+            callbackFunc={this.selectPart}
+          ></PartList>
         </div>
       </div>
-    )
+    );
   }
 
   show(partList: Part[]) {
     this.setState({
-      selectedPartList: partList
+      selectedPartList: partList,
     });
   }
+
+  type(): PartType {
+    switch (this.state.selectedPartList) {
+      case drivers:
+        return PartType.DRIVER;
+      case bodies:
+        return PartType.BODY;
+      case tires:
+        return PartType.TIRE;
+      case gliders:
+        return PartType.GLIDER;
+      default:
+        return PartType.DRIVER;
+    }
+  }
+
+  selectPart = (part: Part, type: PartType) => {
+    switch (type) {
+      case PartType.DRIVER:
+        this.setState({ selectedDriver: part });
+        break;
+      case PartType.BODY:
+        this.setState({ selectedBody: part });
+        break;
+      case PartType.TIRE:
+        this.setState({ selectedTire: part });
+        break;
+      case PartType.GLIDER:
+        this.setState({ selectedGlider: part });
+        break;
+    }
+  };
 }

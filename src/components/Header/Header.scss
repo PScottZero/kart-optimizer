@@ -1,18 +1,15 @@
 @font-face {
-  font-family: 'F2';
-  src: url('./mario_kart_f2.ttf') format('truetype')
+  font-family: "F2";
+  src: url("./mario_kart_f2.ttf") format("truetype");
 }
 
 .Header {
-  position: fixed;
-  top: 0;
-  left: 0;
+  grid-area: header;
   width: 100%;
-  height: 6rem;
+  height: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  background: linear-gradient(#26baff, #F92470);
-  margin-bottom: 2rem;
+  background: linear-gradient(#26baff, #f92470);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   line-height: 4rem;
   word-spacing: -10px;
@@ -33,7 +30,7 @@
 .LogoText {
   color: white;
   font-size: 28px;
-  font-family: 'F2';
+  font-family: "F2";
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #333333;
 }

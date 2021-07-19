@@ -1,8 +1,8 @@
 export enum SpeedHandlingTerrain {
-  GROUND = "Ground", 
-  WATER = "Water", 
-  ANTI_GRAVITY = "Anti-Gravity", 
-  AIR = "Air"
+  GROUND = "Ground",
+  WATER = "Water",
+  ANTI_GRAVITY = "Anti-Gravity",
+  AIR = "Air",
 }
 
 export enum TractionTerrain {

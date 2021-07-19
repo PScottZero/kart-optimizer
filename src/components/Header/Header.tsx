@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import './Header.scss'
-import mk8 from './MarioKart8.webp'
+import React, { Component } from "react";
+import "./Header.scss";
+import mk8 from "./MarioKart8.webp";
 
 export default class Header extends Component {
   render() {
@@ -11,6 +11,6 @@ export default class Header extends Component {
           <p className="LogoText">Kart Optimizer</p>
         </div>
       </div>
-    )
+    );
   }
 }

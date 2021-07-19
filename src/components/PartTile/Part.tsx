@@ -12,5 +12,5 @@ export enum PartType {
   DRIVER = "Driver",
   BODY = "Body",
   TIRE = "Tire",
-  GLIDER = "Glider"
+  GLIDER = "Glider",
 }
