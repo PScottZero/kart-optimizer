@@ -1,6 +1,22 @@
 .PartTile {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  background: #aaa;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  box-sizing: border-box;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 1rem;
+  background: #777;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+}
+
+.PartImage {
+  width: 100%;
 }

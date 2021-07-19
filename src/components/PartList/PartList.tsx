@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Part, PartType } from '../PartSelection/Part'
+import { Part } from '../PartTile/Part'
 import PartTile from '../PartTile/PartTile'
 import './PartList.scss'
 

@@ -26,29 +26,4 @@ export class Stats {
     readonly antiGravityHandling: number,
     readonly airHandling: number
   ) {}
-
-  speed(terrain: SpeedHandlingTerrain) {
-    switch (terrain) {
-      case SpeedHandlingTerrain.GROUND: return this.groundSpeed;
-      case SpeedHandlingTerrain.WATER: return this.waterSpeed;
-      case SpeedHandlingTerrain.ANTI_GRAVITY: return this.antiGravitySpeed;
-      case SpeedHandlingTerrain.AIR: return this.airHandling;
-    }
-  }
-
-  handling(terrain: SpeedHandlingTerrain): number {
-    switch (terrain) {
-      case SpeedHandlingTerrain.GROUND: return this.groundHandling;
-      case SpeedHandlingTerrain.WATER: return this.waterHandling;
-      case SpeedHandlingTerrain.ANTI_GRAVITY: return this.antiGravityHandling;
-      case SpeedHandlingTerrain.AIR: return this.airHandling;
-    }
-  }
-
-  traction(terrain: TractionTerrain): number {
-    switch (terrain) {
-      case TractionTerrain.ON_ROAD: return this.onRoadTraction;
-      case TractionTerrain.OFF_ROAD: return this.offRoadTraction;
-    }
-  }
 }

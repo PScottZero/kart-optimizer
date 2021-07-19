@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Header.scss'
-import mk8 from '../../assets/images/MarioKart8.webp'
+import mk8 from './MarioKart8.webp'
 
 export default class Header extends Component {
   render() {

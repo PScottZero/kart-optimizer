@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
-import { Part } from '../PartSelection/Part'
+import React, { Component, MouseEventHandler } from 'react'
+import { Part } from './Part'
 import './PartTile.scss'
 
 export default class PartTile extends Component<{
-  part: Part
-},{
-
+  part: Part,
 }> {
   render() {
     return (
