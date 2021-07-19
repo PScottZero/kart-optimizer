@@ -19,12 +19,8 @@ body {
   display: grid;
   grid-template-areas:
     "header header"
-    "kart-config kart-specs"
-    "kart-config placeholder";
+    "kart-config kart-config"
+    "kart-config kart-config";
   grid-template-rows: 6rem calc(50vh - 3rem) calc(50vh - 3rem);
   grid-template-columns: 50vw 50vw;
-}
-
-KartConfig {
-  grid-area: kart-config;
 }
