@@ -4,10 +4,10 @@ import KartConfig from '../../components/KartConfig/KartConfig'
 import KartStats from '../../components/KartStats/KartStats'
 import { Part, PartType } from '../../components/PartTile/Part'
 import './KartOptimizerApp.scss'
-import drivers from "../../components/KartConfig/json/drivers.json";
-import bodies from "../../components/KartConfig/json/bodies.json";
-import tires from "../../components/KartConfig/json/tires.json";
-import gliders from "../../components/KartConfig/json/gliders.json";
+import drivers from "../../json/drivers.json";
+import bodies from "../../json/bodies.json";
+import tires from "../../json/tires.json";
+import gliders from "../../json/gliders.json";
 
 interface KartOptimizerAppState {
   selectedDriver: Part,

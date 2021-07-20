@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import drivers from "./json/drivers.json";
-import bodies from "./json/bodies.json";
-import tires from "./json/tires.json";
-import gliders from "./json/gliders.json";
+import drivers from "../../json/drivers.json";
+import bodies from "../../json/bodies.json";
+import tires from "../../json/tires.json";
+import gliders from "../../json/gliders.json";
 import "./KartConfig.scss";
 import PartList from "../PartList/PartList";
 import PartSelection from "../PartSelection/PartSelection";

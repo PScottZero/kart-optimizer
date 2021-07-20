@@ -1,5 +1,3 @@
-import com.google.gson.GsonBuilder
-import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
@@ -8,19 +6,18 @@ fun main() { MarioWikiScraper.run() }
 
 class MarioWikiScraper {
     companion object {
-        private val CATEGORIES = listOf("bodies", "drivers", "tires", "gliders")
         private const val TABLE_START = "<table class=\"wikitable sortable"
         private const val ROW_START = "<tr>"
         private const val PART_NAME_START = "title=\""
         private const val IMAGE_URL_START = "src=\""
         private const val DATA_START = "<td>"
         private const val TABLE_END = "</table>"
+        private const val CATEGORY_COUNT = 4;
 
         private var html: List<String> = emptyList()
         private var currentIndex: Int = 0
-        private val gson = GsonBuilder().setPrettyPrinting().create()
 
-        fun run() = this.write(this.scrape())
+        fun run() = KartDataWriter.write(this.scrape())
 
         private fun scrape(): MarioKart8Parts {
             html = htmlLines()
@@ -28,19 +25,9 @@ class MarioWikiScraper {
             val partCategories = ArrayList<PartCategory>()
             while (currentIndex < html.size) {
                 partCategories.add(parseTable())
-                if (partCategories.size == CATEGORIES.size) break
+                if (partCategories.size == CATEGORY_COUNT) break
             }
             return partCategories
-        }
-
-        private fun write(parts: MarioKart8Parts) {
-            for ((index, category) in CATEGORIES.withIndex()) {
-                File("json/$category.json").also {
-                    it.parentFile.mkdir()
-                }.bufferedWriter().use {
-                    it.write(gson.toJson(parts[index]))
-                }
-            }
         }
 
         private fun parseTable(): PartCategory {
@@ -98,8 +85,9 @@ class MarioWikiScraper {
         }
 
         private fun nextPartName(): String {
-            val startIndex = html[currentIndex].indexOf(PART_NAME_START) + PART_NAME_START.length
-            val endIndex = html[currentIndex].indexOf("\"", startIndex)
+            val preIndex = html[currentIndex].indexOf(PART_NAME_START) + PART_NAME_START.length
+            val startIndex = html[currentIndex].indexOf(">", preIndex) + 1
+            val endIndex = html[currentIndex].indexOf("<", startIndex)
             return html[currentIndex].substring(startIndex, endIndex)
         }
 
