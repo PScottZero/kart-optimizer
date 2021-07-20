@@ -12,7 +12,8 @@ export default class PartSelection extends Component<PartSelectionProps> {
     return (
       <div className="PartSelection" onClick={this.props.onClick}>
         <div className="SelectedPart">
-          <img className="PartImage"
+          <img
+            className="PartImage"
             src={this.props.selectedPart.img}
             alt={this.props.selectedPart.name}
           ></img>
@@ -23,9 +24,9 @@ export default class PartSelection extends Component<PartSelectionProps> {
   }
 
   partName() {
-    let split = this.props.selectedPart.name.split(' ')
-    if (split[split.length - 1].includes('(')) split.pop()
-    if (split.length >= 2) return `${split[0]} ${split[1]}`
-    return split.join(' ')
+    let split = this.props.selectedPart.name.split(" ");
+    if (split[split.length - 1].includes("(")) split.pop();
+    if (split.length >= 2) return `${split[0]} ${split[1]}`;
+    return split.join(" ");
   }
 }

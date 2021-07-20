@@ -9,13 +9,12 @@ interface PartListProps {
   type: PartType;
 }
 
-export const PartList: React.FC<PartListProps> = props => {
+export const PartList: React.FC<PartListProps> = (props) => {
   return (
     <PartContext.Consumer>
-      {context => (
-        <div className="PartList">{new Array(props.partList.length)
-          .fill(0)
-          .map((_, index) => {
+      {(context) => (
+        <div className="PartList">
+          {new Array(props.partList.length).fill(0).map((_, index) => {
             return (
               <PartTile
                 key={index}
@@ -25,11 +24,11 @@ export const PartList: React.FC<PartListProps> = props => {
                 }
               ></PartTile>
             );
-          })
-          }</div>
+          })}
+        </div>
       )}
     </PartContext.Consumer>
   );
-}
+};
 
 export default PartList;
