@@ -3,15 +3,12 @@ import { Kart } from '../Optimizer/Kart'
 import PartTile from '../PartTile/PartTile'
 import './KartCombo.scss'
 import { Part } from '../PartTile/Part'
-import { PartContext } from '../../providers/PartProvider'
 
 interface KartComboProps {
   kart: Kart,
 }
 
 export default class KartCombo extends Component<KartComboProps> {
-  static context = PartContext
-  
   render() {
     var partTiles = this.partsForKart().map((part: Part) => <PartTile part={part} onClick={() => {}}></PartTile>)
     return <div className="KartCombo">{partTiles}</div>

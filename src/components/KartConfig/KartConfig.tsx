@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 
 import "./KartConfig.scss";
 import PartSelection from "../PartSelection/PartSelection";
 import { Part, PartType } from "../PartTile/Part";
+import PartList from "../PartList/PartList";
 import { PartContext } from "../../providers/PartProvider";
-import { KartContext } from "../../providers/KartProvider";
 
 interface KartConfigState {
   selectedPartList: Part[];
@@ -32,39 +32,34 @@ export const KartConfig: React.FC = () => {
   
   return (
     <PartContext.Consumer>
-      {partContext => (
-        <KartContext.Consumer>
-          {kartContext => (
-            <div className="KartConfig">
+      {context => (<div className="KartConfig">
               <div className="CenterContainer">
                 <div className="PartOptions">
                   <PartSelection
-                    selectedPart={kartContext.selectedDriver}
-                    onClick={() => show(partContext.drivers)}
+                    selectedPart={context.selectedDriver}
+                    onClick={() => show(context.drivers)}
                   ></PartSelection>
                   <PartSelection
-                    selectedPart={kartContext.selectedBody}
-                    onClick={() => show(partContext.bodies)}
+                    selectedPart={context.selectedBody}
+                    onClick={() => show(context.bodies)}
                   ></PartSelection>
                   <PartSelection
-                    selectedPart={kartContext.selectedTire}
-                    onClick={() => show(partContext.tires)}
+                    selectedPart={context.selectedTire}
+                    onClick={() => show(context.tires)}
                   ></PartSelection>
                   <PartSelection
-                    selectedPart={kartContext.selectedGlider}
-                    onClick={() => show(partContext.gliders)}
+                    selectedPart={context.selectedGlider}
+                    onClick={() => show(context.gliders)}
                   ></PartSelection>
                 </div>
                 <div className="Separator"></div>
-                {/* <PartList
+                <PartList
                   partList={state.selectedPartList}
                   type={type()}
-                ></PartList> */}
+                ></PartList>
               </div>
             </div>
           )}
-        </KartContext.Consumer>
-      )}
     </PartContext.Consumer>
   );
 }
