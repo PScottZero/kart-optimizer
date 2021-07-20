@@ -1,62 +1,56 @@
 import React, { Component } from 'react'
+import { KartContext } from '../../providers/KartProvider'
 import { Part } from '../PartTile/Part'
 import ProgressBar from '../ProgressBar/ProgressBar'
 import './KartStats.scss'
 
-interface KartStatsProps {
-  selectedDriver: Part,
-  selectedBody: Part,
-  selectedTire: Part,
-  selectedGlider: Part,
-}
+export const KartStats: React.FC = () => {
+  const context = React.useContext(KartContext)
+  
+  const speed = (): number => {
+    return context.selectedDriver.stats.groundSpeed +
+      context.selectedBody.stats.groundSpeed +
+      context.selectedTire.stats.groundSpeed +
+      context.selectedGlider.stats.groundSpeed
+  }
 
-export default class KartStats extends Component<KartStatsProps> {
-  render() {
-    return (
-      <div className="PartStats">
-        <div className="StatsContainer">
-          <ProgressBar label="Speed" value={this.speed()}></ProgressBar>
-          <ProgressBar label="Acceleration" value={this.acceleration()}></ProgressBar>
-          <ProgressBar label="Weight" value={this.weight()}></ProgressBar>
-          <ProgressBar label="Handling" value={this.handling()}></ProgressBar>
-          <ProgressBar label="Traction" value={this.traction()}></ProgressBar>
-        </div>
+  const acceleration = (): number => {
+    return context.selectedDriver.stats.acceleration +
+      context.selectedBody.stats.acceleration +
+      context.selectedTire.stats.acceleration +
+      context.selectedGlider.stats.acceleration
+  }
+
+  const weight = (): number => {
+    return context.selectedDriver.stats.weight +
+      context.selectedBody.stats.weight +
+      context.selectedTire.stats.weight +
+      context.selectedGlider.stats.weight
+  }
+
+  const handling = (): number => {
+    return context.selectedDriver.stats.groundHandling +
+      context.selectedBody.stats.groundHandling +
+      context.selectedTire.stats.groundHandling +
+      context.selectedGlider.stats.groundHandling
+  }
+
+  const traction = (): number => {
+    return context.selectedDriver.stats.offRoadTraction +
+      context.selectedBody.stats.offRoadTraction +
+      context.selectedTire.stats.offRoadTraction +
+      context.selectedGlider.stats.offRoadTraction
+  }
+
+  return (
+    <div className="PartStats">
+      <div className="StatsContainer">
+        <ProgressBar label="Speed" value={speed()}></ProgressBar>
+        <ProgressBar label="Acceleration" value={acceleration()}></ProgressBar>
+        <ProgressBar label="Weight" value={weight()}></ProgressBar>
+        <ProgressBar label="Handling" value={handling()}></ProgressBar>
+        <ProgressBar label="Traction" value={traction()}></ProgressBar>
       </div>
-    )
-  }
-
-  speed(): number {
-    return this.props.selectedDriver.stats.groundSpeed +
-      this.props.selectedBody.stats.groundSpeed +
-      this.props.selectedTire.stats.groundSpeed +
-      this.props.selectedGlider.stats.groundSpeed
-  }
-
-  acceleration(): number {
-    return this.props.selectedDriver.stats.acceleration +
-      this.props.selectedBody.stats.acceleration +
-      this.props.selectedTire.stats.acceleration +
-      this.props.selectedGlider.stats.acceleration
-  }
-
-  weight(): number {
-    return this.props.selectedDriver.stats.weight +
-      this.props.selectedBody.stats.weight +
-      this.props.selectedTire.stats.weight +
-      this.props.selectedGlider.stats.weight
-  }
-
-  handling(): number {
-    return this.props.selectedDriver.stats.groundHandling +
-      this.props.selectedBody.stats.groundHandling +
-      this.props.selectedTire.stats.groundHandling +
-      this.props.selectedGlider.stats.groundHandling
-  }
-
-  traction(): number {
-    return this.props.selectedDriver.stats.offRoadTraction +
-      this.props.selectedBody.stats.offRoadTraction +
-      this.props.selectedTire.stats.offRoadTraction +
-      this.props.selectedGlider.stats.offRoadTraction
-  }
+    </div>
+  )
 }

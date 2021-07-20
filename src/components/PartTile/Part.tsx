@@ -1,10 +1,10 @@
-import { Stats } from "../KartConfig/Stats";
+import { Stats } from "../KartStats/Stats";
 
 export class Part {
   constructor(
-    readonly name: string,
-    readonly img: string,
-    readonly stats: Stats
+    readonly name: string = "",
+    readonly img: string = "",
+    readonly stats: Stats = new Stats()
   ) {}
 }
 

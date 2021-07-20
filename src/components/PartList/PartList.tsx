@@ -1,30 +1,34 @@
 import React, { Component } from "react";
+import { IKartContext, KartContext, setKartParts } from "../../providers/KartProvider";
+import { PartContext } from "../../providers/PartProvider";
 import { Part, PartType } from "../PartTile/Part";
 import PartTile from "../PartTile/PartTile";
 import "./PartList.scss";
 
-export default class PartList extends Component<{
+interface PartListProps {
   partList: Part[];
   type: PartType;
   callbackFunc: Function;
-}> {
-  render() {
-    var parts = new Array(this.props.partList.length)
+}
+
+export const PartList: React.FC<PartListProps> = props => {
+  const context = React.useContext(KartContext)
+
+  var parts = new Array(props.partList.length)
       .fill(0)
       .map((_, index) => {
         return (
           <PartTile
             key={index}
-            part={this.props.partList[index]}
+            part={props.partList[index]}
             onClick={() =>
-              this.props.callbackFunc(
-                this.props.partList[index],
-                this.props.type
-              )
+              setKartParts(context, props.partList[index], props.type)
             }
           ></PartTile>
         );
       });
-    return <div className="PartList">{parts}</div>;
-  }
+
+  return <div className="PartList">{parts}</div>;
 }
+
+export default PartList;

@@ -1,99 +1,70 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
-import drivers from "../../json/drivers.json";
-import bodies from "../../json/bodies.json";
-import tires from "../../json/tires.json";
-import gliders from "../../json/gliders.json";
 import "./KartConfig.scss";
-import PartList from "../PartList/PartList";
 import PartSelection from "../PartSelection/PartSelection";
 import { Part, PartType } from "../PartTile/Part";
-
-interface KartConfigProps {
-  callbackFunc: Function
-}
+import { PartContext } from "../../providers/PartProvider";
+import { KartContext } from "../../providers/KartProvider";
 
 interface KartConfigState {
   selectedPartList: Part[];
-  selectedDriver: Part;
-  selectedBody: Part;
-  selectedTire: Part;
-  selectedGlider: Part;
 }
 
-export default class KartConfig extends Component<KartConfigProps, KartConfigState> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      selectedPartList: drivers,
-      selectedDriver: drivers[0],
-      selectedBody: bodies[0],
-      selectedTire: tires[0],
-      selectedGlider: gliders[0],
-    };
-  }
-
-  render() {
-    return (
-      <div className="KartConfig">
-        <div className="CenterContainer">
-          <div className="PartOptions">
-            <PartSelection
-              selectedPart={this.state.selectedDriver}
-              onClick={() => this.show(drivers)}
-            ></PartSelection>
-            <PartSelection
-              selectedPart={this.state.selectedBody}
-              onClick={() => this.show(bodies)}
-            ></PartSelection>
-            <PartSelection
-              selectedPart={this.state.selectedTire}
-              onClick={() => this.show(tires)}
-            ></PartSelection>
-            <PartSelection
-              selectedPart={this.state.selectedGlider}
-              onClick={() => this.show(gliders)}
-            ></PartSelection>
-          </div>
-          <div className="Separator"></div>
-          <PartList
-            partList={this.state.selectedPartList}
-            type={this.type()}
-            callbackFunc={this.selectPart}
-          ></PartList>
-        </div>
-      </div>
-    );
-  }
-
-  show(partList: Part[]) {
-    this.setState({
+export const KartConfig: React.FC = () => {
+  const [state, setState] = useState<KartConfigState>({
+    selectedPartList: React.useContext(PartContext).drivers
+  })
+  
+  const show = (partList: Part[]) => {
+    setState({
       selectedPartList: partList,
     });
   }
 
-  type(): PartType {
-    switch (this.state.selectedPartList) {
-      case drivers:
-        return PartType.DRIVER;
-      case bodies:
-        return PartType.BODY;
-      case tires:
-        return PartType.TIRE;
-      case gliders:
-        return PartType.GLIDER;
-      default:
-        return PartType.DRIVER;
+  const type = (): PartType => {
+    switch (state.selectedPartList[0].name) {
+      case "Standard Kart": return PartType.BODY;
+      case "Standard": return PartType.TIRE;
+      case "Super Glider": return PartType.GLIDER;
+      default: return PartType.DRIVER
     }
   }
-
-  selectPart = (part: Part, type: PartType) => {
-    switch (type) {
-      case PartType.DRIVER: this.setState({ selectedDriver: part }); break;
-      case PartType.BODY: this.setState({ selectedBody: part }); break;
-      case PartType.TIRE: this.setState({ selectedTire: part }); break;
-      case PartType.GLIDER: this.setState({ selectedGlider: part }); break;
-    }
-    this.props.callbackFunc(part, type)
-  };
+  
+  return (
+    <PartContext.Consumer>
+      {partContext => (
+        <KartContext.Consumer>
+          {kartContext => (
+            <div className="KartConfig">
+              <div className="CenterContainer">
+                <div className="PartOptions">
+                  <PartSelection
+                    selectedPart={kartContext.selectedDriver}
+                    onClick={() => show(partContext.drivers)}
+                  ></PartSelection>
+                  <PartSelection
+                    selectedPart={kartContext.selectedBody}
+                    onClick={() => show(partContext.bodies)}
+                  ></PartSelection>
+                  <PartSelection
+                    selectedPart={kartContext.selectedTire}
+                    onClick={() => show(partContext.tires)}
+                  ></PartSelection>
+                  <PartSelection
+                    selectedPart={kartContext.selectedGlider}
+                    onClick={() => show(partContext.gliders)}
+                  ></PartSelection>
+                </div>
+                <div className="Separator"></div>
+                {/* <PartList
+                  partList={state.selectedPartList}
+                  type={type()}
+                ></PartList> */}
+              </div>
+            </div>
+          )}
+        </KartContext.Consumer>
+      )}
+    </PartContext.Consumer>
+  );
 }
