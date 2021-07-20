@@ -9,16 +9,19 @@ import PartList from "../PartList/PartList";
 import PartSelection from "../PartSelection/PartSelection";
 import { Part, PartType } from "../PartTile/Part";
 
-export default class KartConfig extends Component<
-  {},
-  {
-    selectedPartList: Part[];
-    selectedDriver: Part;
-    selectedBody: Part;
-    selectedTire: Part;
-    selectedGlider: Part;
-  }
-> {
+interface KartConfigProps {
+  callbackFunc: Function
+}
+
+interface KartConfigState {
+  selectedPartList: Part[];
+  selectedDriver: Part;
+  selectedBody: Part;
+  selectedTire: Part;
+  selectedGlider: Part;
+}
+
+export default class KartConfig extends Component<KartConfigProps, KartConfigState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -86,18 +89,11 @@ export default class KartConfig extends Component<
 
   selectPart = (part: Part, type: PartType) => {
     switch (type) {
-      case PartType.DRIVER:
-        this.setState({ selectedDriver: part });
-        break;
-      case PartType.BODY:
-        this.setState({ selectedBody: part });
-        break;
-      case PartType.TIRE:
-        this.setState({ selectedTire: part });
-        break;
-      case PartType.GLIDER:
-        this.setState({ selectedGlider: part });
-        break;
+      case PartType.DRIVER: this.setState({ selectedDriver: part }); break;
+      case PartType.BODY: this.setState({ selectedBody: part }); break;
+      case PartType.TIRE: this.setState({ selectedTire: part }); break;
+      case PartType.GLIDER: this.setState({ selectedGlider: part }); break;
     }
+    this.props.callbackFunc(part, type)
   };
 }

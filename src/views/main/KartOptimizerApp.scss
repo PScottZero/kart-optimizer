@@ -1,0 +1,9 @@
+.KartOptimizerApp {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "kart-config kart-stats"
+    "kart-config kart-stats";
+  grid-template-rows: 6rem calc(50vh - 3rem) calc(50vh - 3rem);
+  grid-template-columns: 50vw 50vw;
+}

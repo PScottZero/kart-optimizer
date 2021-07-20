@@ -1,15 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./components/Header/Header";
-import KartConfig from "./components/KartConfig/KartConfig";
 import "./index.scss";
+import KartOptimizerApp from "./views/main/KartOptimizerApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="Grid">
-      <Header></Header>
-      <KartConfig></KartConfig>
-    </div>
+    <KartOptimizerApp></KartOptimizerApp>
   </React.StrictMode>,
   document.getElementById("root")
 );

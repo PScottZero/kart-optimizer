@@ -14,6 +14,7 @@ export default class PartList extends Component<{
       .map((_, index) => {
         return (
           <PartTile
+            key={index}
             part={this.props.partList[index]}
             onClick={() =>
               this.props.callbackFunc(

@@ -1,0 +1,43 @@
+.ProgressBar {
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 1rem;
+
+  p {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.Bar {
+  position: relative;
+  width: 100%;
+  background: #777;
+  border-radius: 1rem;
+  height: 1rem;
+  overflow: hidden;
+}
+
+.SeparatorContainer {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 1rem;
+  top: 0;
+}
+
+.Progress {
+  width: 50%;
+  background: linear-gradient(to right, #26baff, #f92470);
+  left: 0;
+  top: 0;
+  height: 1rem;
+}
+
+.VerticalSeparator {
+  height: 100%;
+  width: 2px;
+  background: #333;
+}
