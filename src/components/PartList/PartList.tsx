@@ -1,6 +1,6 @@
 import React from "react";
+import { Part, PartType } from "../../classes/Part";
 import { PartContext } from "../../providers/PartProvider";
-import { Part, PartType } from "../PartTile/Part";
 import PartTile from "../PartTile/PartTile";
 import "./PartList.scss";
 
@@ -9,25 +9,31 @@ interface PartListProps {
   type: PartType;
 }
 
-export const PartList: React.FC<PartListProps> = (props) => {
+const PartList: React.FC<PartListProps> = (props) => {
+  const partData = React.useContext(PartContext);
+
+  const isSelected = (part: Part) => {
+    return (
+      part === partData.selectedDriver ||
+      part === partData.selectedBody ||
+      part === partData.selectedTire ||
+      part === partData.selectedGlider
+    );
+  };
+
   return (
-    <PartContext.Consumer>
-      {(context) => (
-        <div className="PartList">
-          {new Array(props.partList.length).fill(0).map((_, index) => {
-            return (
-              <PartTile
-                key={index}
-                part={props.partList[index]}
-                onClick={() =>
-                  context.setPart(props.partList[index], props.type)
-                }
-              ></PartTile>
-            );
-          })}
-        </div>
-      )}
-    </PartContext.Consumer>
+    <div className="PartList">
+      {new Array(props.partList.length).fill(0).map((_, index) => {
+        return (
+          <PartTile
+            key={index}
+            part={props.partList[index]}
+            type={props.type}
+            isSelected={isSelected(props.partList[index])}
+          ></PartTile>
+        );
+      })}
+    </div>
   );
 };
 

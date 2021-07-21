@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import KartOptimizerApp from "./views/main/KartOptimizerApp";
+import KartOptimizerApp from "./KartOptimizerApp";
 
 ReactDOM.render(
   <React.StrictMode>

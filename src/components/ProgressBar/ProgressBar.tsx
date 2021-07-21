@@ -35,6 +35,6 @@ export default class ProgressBar extends Component<ProgressBarProps> {
   }
 
   barWidth(): number {
-    return this.props.value * (100 / 24) + 12.5;
+    return 100 - (this.props.value * (100 / 24) + 12.5);
   }
 }

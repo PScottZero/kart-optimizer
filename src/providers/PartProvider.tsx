@@ -1,5 +1,5 @@
 import React from "react";
-import { Part, PartType } from "../components/PartTile/Part";
+import { Part, PartType } from "../classes/Part";
 import drivers from "../json/drivers.json";
 import bodies from "../json/bodies.json";
 import tires from "../json/tires.json";
@@ -18,10 +18,10 @@ export interface PartData {
 }
 
 export const defaultPartData: PartData = {
-  drivers: [new Part()],
-  bodies: [new Part()],
-  tires: [new Part()],
-  gliders: [new Part()],
+  drivers: [],
+  bodies: [],
+  tires: [],
+  gliders: [],
   selectedDriver: new Part(),
   selectedBody: new Part(),
   selectedTire: new Part(),
@@ -32,27 +32,36 @@ export const defaultPartData: PartData = {
 export const PartContext = React.createContext<PartData>(defaultPartData);
 PartContext.displayName = "PartData";
 
-const PartProvider: React.FC = (children) => {
+const PartProvider: React.FC = (props) => {
+  const { children } = props;
   const [partData, setPartData] = React.useState(defaultPartData);
 
-  React.useEffect(() => {
-    const setPart = (part: Part, type: PartType) => {
-      switch (type) {
-        case PartType.DRIVER:
-          setPartData({ ...partData, selectedBody: part });
-          break;
-        case PartType.BODY:
-          setPartData({ ...partData, selectedBody: part });
-          break;
-        case PartType.TIRE:
-          setPartData({ ...partData, selectedTire: part });
-          break;
-        case PartType.GLIDER:
-          setPartData({ ...partData, selectedGlider: part });
-          break;
-      }
-    };
+  const setPart = (part: Part, type: PartType) => {
+    switch (type) {
+      case PartType.DRIVER:
+        setPartData((data) => {
+          return { ...data, selectedDriver: part };
+        });
+        break;
+      case PartType.BODY:
+        setPartData((data) => {
+          return { ...data, selectedBody: part };
+        });
+        break;
+      case PartType.TIRE:
+        setPartData((data) => {
+          return { ...data, selectedTire: part };
+        });
+        break;
+      case PartType.GLIDER:
+        setPartData((data) => {
+          return { ...data, selectedGlider: part };
+        });
+        break;
+    }
+  };
 
+  React.useEffect(() => {
     setPartData({
       drivers: drivers,
       bodies: bodies,
@@ -64,7 +73,7 @@ const PartProvider: React.FC = (children) => {
       selectedGlider: gliders[0],
       setPart: setPart,
     });
-  }, [partData]);
+  }, []);
 
   return (
     <PartContext.Provider value={partData}>{children}</PartContext.Provider>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./KartConfig.scss";
 import PartSelection from "../PartSelection/PartSelection";
-import { Part, PartType } from "../PartTile/Part";
+import { Part, PartType } from "../../classes/Part";
 import PartList from "../PartList/PartList";
 import { PartContext } from "../../providers/PartProvider";
 
@@ -11,6 +11,7 @@ interface KartConfigState {
 }
 
 export const KartConfig: React.FC = () => {
+  const partData = React.useContext(PartContext);
   const [state, setState] = useState<KartConfigState>({
     selectedPartList: React.useContext(PartContext).drivers,
   });
@@ -21,50 +22,60 @@ export const KartConfig: React.FC = () => {
     });
   };
 
-  const type = (): PartType => {
-    switch (state.selectedPartList[0].name) {
-      case "Standard Kart":
-        return PartType.BODY;
-      case "Standard":
-        return PartType.TIRE;
-      case "Super Glider":
-        return PartType.GLIDER;
-      default:
-        return PartType.DRIVER;
+  const type = (partList: Part[]): PartType => {
+    if (partList.length > 0) {
+      switch (partList[0].name) {
+        case "Standard Kart":
+          return PartType.BODY;
+        case "Standard":
+          return PartType.TIRE;
+        case "Super Glider":
+          return PartType.GLIDER;
+        default:
+          return PartType.DRIVER;
+      }
     }
+    return PartType.DRIVER;
+  };
+
+  const partList = (): Part[] => {
+    return state.selectedPartList.length === 0
+      ? partData.drivers
+      : state.selectedPartList;
+  };
+
+  const isSelectedCategory = (partList: Part[]): boolean => {
+    return type(partList) === type(state.selectedPartList);
   };
 
   return (
-    <PartContext.Consumer>
-      {(context) => (
-        <div className="KartConfig">
-          <div className="CenterContainer">
-            <div className="PartOptions">
-              <PartSelection
-                selectedPart={context.selectedDriver}
-                onClick={() => show(context.drivers)}
-              ></PartSelection>
-              <PartSelection
-                selectedPart={context.selectedBody}
-                onClick={() => show(context.bodies)}
-              ></PartSelection>
-              <PartSelection
-                selectedPart={context.selectedTire}
-                onClick={() => show(context.tires)}
-              ></PartSelection>
-              <PartSelection
-                selectedPart={context.selectedGlider}
-                onClick={() => show(context.gliders)}
-              ></PartSelection>
-            </div>
-            <div className="Separator"></div>
-            <PartList
-              partList={state.selectedPartList}
-              type={type()}
-            ></PartList>
-          </div>
+    <div className="KartConfig">
+      <div className="CenterContainer">
+        <div className="PartOptions">
+          <PartSelection
+            selectedPart={partData.selectedDriver}
+            isSelected={isSelectedCategory(partData.drivers)}
+            onClick={() => show(partData.drivers)}
+          ></PartSelection>
+          <PartSelection
+            selectedPart={partData.selectedBody}
+            isSelected={isSelectedCategory(partData.bodies)}
+            onClick={() => show(partData.bodies)}
+          ></PartSelection>
+          <PartSelection
+            selectedPart={partData.selectedTire}
+            isSelected={isSelectedCategory(partData.tires)}
+            onClick={() => show(partData.tires)}
+          ></PartSelection>
+          <PartSelection
+            selectedPart={partData.selectedGlider}
+            isSelected={isSelectedCategory(partData.gliders)}
+            onClick={() => show(partData.gliders)}
+          ></PartSelection>
         </div>
-      )}
-    </PartContext.Consumer>
+        <div className="Separator"></div>
+        <PartList partList={partList()} type={type(partList())}></PartList>
+      </div>
+    </div>
   );
 };

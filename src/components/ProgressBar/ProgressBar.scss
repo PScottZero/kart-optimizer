@@ -15,6 +15,7 @@
   background: #777;
   border-radius: 1rem;
   height: 1rem;
+  background: linear-gradient(to right, #26baff, #f92470);
   overflow: hidden;
 }
 
@@ -29,11 +30,11 @@
 }
 
 .Progress {
-  width: 50%;
-  background: linear-gradient(to right, #26baff, #f92470);
-  left: 0;
+  position: absolute;
+  right: 0;
   top: 0;
   height: 1rem;
+  background: gray;
 }
 
 .VerticalSeparator {

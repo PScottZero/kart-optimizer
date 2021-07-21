@@ -1,4 +1,4 @@
-import { Stats } from "../KartStats/Stats";
+import { Stats } from "./Stats";
 
 export class Part {
   constructor(

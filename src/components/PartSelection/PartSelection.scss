@@ -22,10 +22,9 @@
   height: 9rem;
   padding: 0.5rem;
   border-radius: 2rem;
-  background: #777;
-  transition: 0.25s;
+  transition: 0.2s;
 
   &:hover {
-    filter: brightness(80%);
+    filter: brightness(70%);
   }
 }

@@ -10,10 +10,10 @@
   margin: 0.5rem;
   padding: 0.25rem;
   border-radius: 1rem;
-  background: #555;
+  transition: 0.2s;
 
   &:hover {
-    filter: brightness(80%);
+    filter: brightness(70%);
   }
 }
 

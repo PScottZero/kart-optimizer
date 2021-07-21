@@ -1,16 +1,32 @@
-import React, { Component, MouseEventHandler } from "react";
-import { Part } from "./Part";
+import React from "react";
+import { PartContext } from "../../providers/PartProvider";
+import { Part, PartType } from "../../classes/Part";
 import "./PartTile.scss";
 
-export default class PartTile extends Component<{
+interface PartTileProps {
   part: Part;
-  onClick: MouseEventHandler;
-}> {
-  render() {
-    return (
-      <div className="PartTile" onClick={this.props.onClick}>
-        <img className="PartImage" src={this.props.part.img} alt="Part" />
-      </div>
-    );
-  }
+  type?: PartType;
+  isSelected: boolean;
 }
+
+const PartTile: React.FC<PartTileProps> = (props) => {
+  const partData = React.useContext(PartContext);
+
+  const color = (): string => {
+    return props.isSelected ? "#26baff" : "#555";
+  };
+
+  return (
+    <div
+      className="PartTile"
+      onClick={() => {
+        if (props.type) partData.setPart(props.part, props.type);
+      }}
+      style={{ background: color() }}
+    >
+      <img className="PartImage" src={props.part.img} alt="Part" />
+    </div>
+  );
+};
+
+export default PartTile;
