@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/kart-optimizer/static/css/main.0833a5ff.chunk.css",
+    "main.js": "/kart-optimizer/static/js/main.79ca39c1.chunk.js",
+    "main.js.map": "/kart-optimizer/static/js/main.79ca39c1.chunk.js.map",
+    "runtime-main.js": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js",
+    "runtime-main.js.map": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js.map",
+    "static/js/2.27d3237a.chunk.js": "/kart-optimizer/static/js/2.27d3237a.chunk.js",
+    "static/js/2.27d3237a.chunk.js.map": "/kart-optimizer/static/js/2.27d3237a.chunk.js.map",
+    "index.html": "/kart-optimizer/index.html",
+    "static/css/main.0833a5ff.chunk.css.map": "/kart-optimizer/static/css/main.0833a5ff.chunk.css.map",
+    "static/js/2.27d3237a.chunk.js.LICENSE.txt": "/kart-optimizer/static/js/2.27d3237a.chunk.js.LICENSE.txt",
+    "static/media/MarioKart8.428361ae.webp": "/kart-optimizer/static/media/MarioKart8.428361ae.webp",
+    "static/media/Header.scss": "/kart-optimizer/static/media/mario_kart_f2.0651abbb.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bd26d0f5.js",
+    "static/js/2.27d3237a.chunk.js",
+    "static/css/main.0833a5ff.chunk.css",
+    "static/js/main.79ca39c1.chunk.js"
+  ]
+}
