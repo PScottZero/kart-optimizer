@@ -1,7 +1,7 @@
-import React from "react";
-import { PartContext } from "../../providers/PartProvider";
-import { Part, PartType } from "../../classes/Part";
-import "./PartTile.scss";
+import React from 'react';
+import { PartContext } from '../../providers/PartProvider';
+import { Part, PartType } from '../../classes/Part';
+import './PartTile.scss';
 
 interface PartTileProps {
   part: Part;
@@ -13,7 +13,7 @@ const PartTile: React.FC<PartTileProps> = (props) => {
   const partData = React.useContext(PartContext);
 
   const color = (): string => {
-    return props.isSelected ? "#26baff" : "#555";
+    return props.isSelected ? '#26baff' : '#555';
   };
 
   return (

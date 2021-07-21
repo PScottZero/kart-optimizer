@@ -1,8 +1,8 @@
-import React from "react";
-import { Part, PartType } from "../../classes/Part";
-import { PartContext } from "../../providers/PartProvider";
-import PartTile from "../PartTile/PartTile";
-import "./PartList.scss";
+import React from 'react';
+import { Part, PartType } from '../../classes/Part';
+import { PartContext } from '../../providers/PartProvider';
+import PartTile from '../PartTile/PartTile';
+import './PartList.scss';
 
 interface PartListProps {
   partList: Part[];

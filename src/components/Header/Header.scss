@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "F2";
-  src: url("./mario_kart_f2.ttf") format("truetype");
+  font-family: 'F2';
+  src: url('./mario_kart_f2.ttf') format('truetype');
 }
 
 .Header {
@@ -30,7 +30,7 @@
 .LogoText {
   color: white;
   font-size: 28px;
-  font-family: "F2";
+  font-family: 'F2';
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #333333;
 }

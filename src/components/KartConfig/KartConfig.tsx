@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./KartConfig.scss";
-import PartSelection from "../PartSelection/PartSelection";
-import { Part, PartType } from "../../classes/Part";
-import PartList from "../PartList/PartList";
-import { PartContext } from "../../providers/PartProvider";
+import './KartConfig.scss';
+import PartSelection from '../PartSelection/PartSelection';
+import { Part, PartType } from '../../classes/Part';
+import PartList from '../PartList/PartList';
+import { PartContext } from '../../providers/PartProvider';
 
 interface KartConfigState {
   selectedPartList: Part[];
@@ -25,11 +25,11 @@ export const KartConfig: React.FC = () => {
   const type = (partList: Part[]): PartType => {
     if (partList.length > 0) {
       switch (partList[0].name) {
-        case "Standard Kart":
+        case 'Standard Kart':
           return PartType.BODY;
-        case "Standard":
+        case 'Standard':
           return PartType.TIRE;
-        case "Super Glider":
+        case 'Super Glider':
           return PartType.GLIDER;
         default:
           return PartType.DRIVER;

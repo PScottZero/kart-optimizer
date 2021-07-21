@@ -2,5 +2,38 @@
   grid-area: optimizer;
   width: 100%;
   height: 100%;
-  background: blue;
+  background: #444;
+}
+
+.Config {
+  float: left;
+  height: 100%;
+  width: 16rem;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  button {
+    background: linear-gradient(to right, #26baff, #f92470);
+    padding: 1rem;
+    color: white;
+    border-radius: 10rem;
+    width: 100%;
+    transition: 0.2s;
+    font-size: 20px;
+
+    &:hover {
+      filter: brightness(70%);
+    }
+  }
+}
+
+.Options {
+  float: right;
+  height: 100%;
+  width: calc(100% - 16rem);
+  box-sizing: border-box;
+  overflow-y: scroll;
+  padding: 1rem;
+  background: #333;
+  border-radius: 3rem 0 0 0;
 }

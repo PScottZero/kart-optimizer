@@ -1,9 +1,9 @@
-import React from "react";
-import { Part, PartType } from "../classes/Part";
-import drivers from "../json/drivers.json";
-import bodies from "../json/bodies.json";
-import tires from "../json/tires.json";
-import gliders from "../json/gliders.json";
+import React from 'react';
+import { Part, PartType } from '../classes/Part';
+import drivers from '../json/drivers.json';
+import bodies from '../json/bodies.json';
+import tires from '../json/tires.json';
+import gliders from '../json/gliders.json';
 
 export interface PartData {
   drivers: Part[];
@@ -15,6 +15,7 @@ export interface PartData {
   selectedTire: Part;
   selectedGlider: Part;
   setPart: (part: Part, type: PartType) => void;
+  setKart: (parts: Part[]) => void;
 }
 
 export const defaultPartData: PartData = {
@@ -27,10 +28,11 @@ export const defaultPartData: PartData = {
   selectedTire: new Part(),
   selectedGlider: new Part(),
   setPart: (part: Part, type: PartType) => console.log(part, type),
+  setKart: (parts: Part[]) => console.log(parts),
 };
 
 export const PartContext = React.createContext<PartData>(defaultPartData);
-PartContext.displayName = "PartData";
+PartContext.displayName = 'PartData';
 
 const PartProvider: React.FC = (props) => {
   const { children } = props;
@@ -61,6 +63,18 @@ const PartProvider: React.FC = (props) => {
     }
   };
 
+  const setKart = (parts: Part[]) => {
+    setPartData((data) => {
+      return {
+        ...data,
+        selectedDriver: parts[0],
+        selectedBody: parts[1],
+        selectedTire: parts[2],
+        selectedGlider: parts[3],
+      };
+    });
+  };
+
   React.useEffect(() => {
     setPartData({
       drivers: drivers,
@@ -72,6 +86,7 @@ const PartProvider: React.FC = (props) => {
       selectedTire: tires[0],
       selectedGlider: gliders[0],
       setPart: setPart,
+      setKart: setKart,
     });
   }, []);
 

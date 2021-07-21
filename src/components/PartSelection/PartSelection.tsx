@@ -1,6 +1,6 @@
-import React, { Component, MouseEventHandler } from "react";
-import { Part } from "../../classes/Part";
-import "./PartSelection.scss";
+import React, { Component, MouseEventHandler } from 'react';
+import { Part } from '../../classes/Part';
+import './PartSelection.scss';
 
 interface PartSelectionProps {
   selectedPart: Part;
@@ -25,13 +25,13 @@ export default class PartSelection extends Component<PartSelectionProps> {
   }
 
   color(): string {
-    return this.props.isSelected ? "#26baff" : "#777";
+    return this.props.isSelected ? '#26baff' : '#777';
   }
 
   partName(): string {
-    let split = this.props.selectedPart.name.split(" ");
-    if (split[split.length - 1].includes("(")) split.pop();
+    let split = this.props.selectedPart.name.split(' ');
+    if (split[split.length - 1].includes('(')) split.pop();
     if (split.length >= 2) return `${split[0]} ${split[1]}`;
-    return split.join(" ");
+    return split.join(' ');
   }
 }
