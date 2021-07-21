@@ -26,7 +26,7 @@ export default class ProgressBar extends Component<ProgressBarProps> {
         <div className="Bar">
           <div
             className="Progress"
-            style={{ width: `${this.barWidth()}%` }}
+            style={{ width: `${100 - this.barWidth()}%` }}
           ></div>
           <div className="SeparatorContainer">{separators}</div>
         </div>
@@ -35,6 +35,6 @@ export default class ProgressBar extends Component<ProgressBarProps> {
   }
 
   barWidth(): number {
-    return 100 - (this.props.value * (100 / 24) + 12.5);
+    return this.props.value * (100 / 24) + 12.5;
   }
 }
