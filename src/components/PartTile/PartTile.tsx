@@ -6,7 +6,7 @@ import "./PartTile.scss";
 interface PartTileProps {
   part: Part;
   type?: PartType;
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 const PartTile: React.FC<PartTileProps> = (props) => {

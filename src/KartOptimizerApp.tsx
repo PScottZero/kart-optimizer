@@ -13,7 +13,6 @@ export default class KartOptimizerApp extends Component {
           <Header></Header>
           <KartConfig></KartConfig>
           <KartStats></KartStats>
-          {/* <Optimizer></Optimizer> */}
         </div>
       </PartProvider>
     );
