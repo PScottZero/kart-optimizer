@@ -15,13 +15,11 @@ export const KartStats: React.FC = () => {
 
   return (
     <div className="PartStats">
-      <div className="StatsContainer">
-        <ProgressBar label="Speed" value={stats[0]}></ProgressBar>
-        <ProgressBar label="Acceleration" value={stats[1]}></ProgressBar>
-        <ProgressBar label="Weight" value={stats[2]}></ProgressBar>
-        <ProgressBar label="Handling" value={stats[3]}></ProgressBar>
-        <ProgressBar label="Traction" value={stats[4]}></ProgressBar>
-      </div>
+      <ProgressBar label="Speed" value={stats[0]}></ProgressBar>
+      <ProgressBar label="Acceleration" value={stats[1]}></ProgressBar>
+      <ProgressBar label="Weight" value={stats[2]}></ProgressBar>
+      <ProgressBar label="Handling" value={stats[3]}></ProgressBar>
+      <ProgressBar label="Traction" value={stats[4]}></ProgressBar>
     </div>
   );
 };

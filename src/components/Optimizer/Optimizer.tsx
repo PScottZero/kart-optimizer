@@ -1,53 +1,35 @@
 import React from 'react';
 import { PartContext } from '../../providers/PartProvider';
-import {
-  arrayMove,
-  SortableContainer,
-  SortableElement,
-} from 'react-sortable-hoc';
 import KartCombo from '../KartCombo/KartCombo';
 import './Optimizer.scss';
+import StatPriority from '../StatPriority/StatPriority';
+import { Part } from '../../classes/Part';
+// import { StatPriorityContext } from '../../providers/StatPriorityProvider';
 
 const Optimizer: React.FC = () => {
-  const context = React.useContext(PartContext);
-  const [{ statPriority }, setStatPriority] = React.useState({
-    statPriority: ['Speed', 'Acceleration', 'Weight', 'Handling', 'Traction'],
-  });
+  const partContext = React.useContext(PartContext);
+  // const statPriorityContext = React.useContext(StatPriorityContext);
 
-  const SortableItem = SortableElement(({ value }: any) => <li>{value}</li>);
+  const dummyKarts: Part[][] = [];
 
-  const SortableList = SortableContainer(({ items }: any) => {
-    return (
-      <ul>
-        {items.map((value: any, index: any) => (
-          <SortableItem key={`item-${value}`} index={index} value={value} />
-        ))}
-      </ul>
-    );
-  });
-
-  const onSortEnd = ({ oldIndex, newIndex }: any) => {
-    setStatPriority({
-      statPriority: arrayMove(statPriority, oldIndex, newIndex),
-    });
-  };
+  for (var i = 0; i < 10; i++) {
+    dummyKarts.push([
+      partContext.drivers[i],
+      partContext.bodies[i],
+      partContext.tires[i],
+      partContext.gliders[i],
+    ]);
+  }
 
   return (
     <div className="Optimizer">
       <div className="Config">
-        <SortableList items={statPriority} onSortEnd={onSortEnd}></SortableList>
+        <StatPriority></StatPriority>
         <button>Generate Karts</button>
       </div>
       <div className="Options">
-        {new Array(5).fill(0).map(() => (
-          <KartCombo
-            parts={[
-              context.selectedDriver,
-              context.selectedBody,
-              context.selectedTire,
-              context.selectedGlider,
-            ]}
-          ></KartCombo>
+        {dummyKarts.map((value) => (
+          <KartCombo parts={value}></KartCombo>
         ))}
       </div>
     </div>

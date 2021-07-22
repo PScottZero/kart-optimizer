@@ -12,16 +12,19 @@ const KartCombo: React.FC<KartComboProps> = (props) => {
   const context = React.useContext(PartContext);
   const parts: JSX.Element[] = [];
   for (var part of props.parts) {
-    parts.push(
-      <div className="KartComboPart">
-        <img src={part.img} alt="Part"></img>
-      </div>
-    );
+    if (part !== undefined) {
+      parts.push(
+        <div className="KartComboPart">
+          <img src={part.img} alt="Part"></img>
+        </div>
+      );
+    }
   }
 
   const stats: JSX.Element[] = [];
   const statLabels = ['S', 'A', 'W', 'H', 'T'];
-  const statValues = sumOfStats(props.parts);
+  const statValues =
+    props.parts[0] !== undefined ? sumOfStats(props.parts) : [];
   statLabels.forEach((value, index) =>
     stats.push(
       <p>

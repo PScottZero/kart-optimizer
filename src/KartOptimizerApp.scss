@@ -2,8 +2,7 @@
   display: grid;
   grid-template-areas:
     'header header'
-    'kart-config kart-stats'
-    'kart-config optimizer';
-  grid-template-rows: 6rem calc(50vh - 3rem) calc(50vh - 3rem);
-  grid-template-columns: 60vw 40vw;
+    'kart-config sidebar';
+  grid-template-rows: 6rem calc(100vh - 6rem);
+  grid-template-columns: calc(100vw - 34rem) 34rem;
 }

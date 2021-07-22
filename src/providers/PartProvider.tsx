@@ -14,9 +14,18 @@ export interface PartData {
   selectedBody: Part;
   selectedTire: Part;
   selectedGlider: Part;
+  statPriority: string[];
   setPart: (part: Part, type: PartType) => void;
   setKart: (parts: Part[]) => void;
 }
+
+const defaultStatPriority = [
+  'Speed',
+  'Acceleration',
+  'Weight',
+  'Handling',
+  'Traction',
+];
 
 export const defaultPartData: PartData = {
   drivers: [],
@@ -27,12 +36,12 @@ export const defaultPartData: PartData = {
   selectedBody: new Part(),
   selectedTire: new Part(),
   selectedGlider: new Part(),
+  statPriority: defaultStatPriority,
   setPart: (part: Part, type: PartType) => console.log(part, type),
   setKart: (parts: Part[]) => console.log(parts),
 };
 
 export const PartContext = React.createContext<PartData>(defaultPartData);
-PartContext.displayName = 'PartData';
 
 const PartProvider: React.FC = (props) => {
   const { children } = props;
@@ -85,6 +94,7 @@ const PartProvider: React.FC = (props) => {
       selectedBody: bodies[0],
       selectedTire: tires[0],
       selectedGlider: gliders[0],
+      statPriority: defaultStatPriority,
       setPart: setPart,
       setKart: setKart,
     });

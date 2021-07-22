@@ -1,16 +1,7 @@
 .PartStats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   grid-area: kart-stats;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  background: #444;
-  padding: 0 6rem;
-}
-
-.StatsContainer {
-  height: 20rem;
-  width: 100%;
+  height: 24rem;
+  padding: 2rem;
 }

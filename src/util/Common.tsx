@@ -35,10 +35,8 @@ export const statColor = (stat: number): string => {
   const startColor = [38, 186, 255];
   const endColor = [249, 36, 112];
   const diffs = startColor.map((color, index) => endColor[index] - color);
-  console.log(diffs);
   const color = diffs.map(
     (diff, index) => startColor[index] + diff * (stat / 6)
   );
-  console.log(color);
   return `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
 };
