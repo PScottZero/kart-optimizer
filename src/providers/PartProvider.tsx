@@ -4,6 +4,7 @@ import drivers from '../json/drivers.json';
 import bodies from '../json/bodies.json';
 import tires from '../json/tires.json';
 import gliders from '../json/gliders.json';
+import { Kart } from '../classes/Kart';
 
 export interface PartData {
   drivers: Part[];
@@ -16,7 +17,7 @@ export interface PartData {
   selectedGlider: Part;
   statPriority: string[];
   setPart: (part: Part, type: PartType) => void;
-  setKart: (parts: Part[]) => void;
+  setKart: (kart: Kart) => void;
 }
 
 const defaultStatPriority = [
@@ -38,7 +39,7 @@ export const defaultPartData: PartData = {
   selectedGlider: new Part(),
   statPriority: defaultStatPriority,
   setPart: (part: Part, type: PartType) => console.log(part, type),
-  setKart: (parts: Part[]) => console.log(parts),
+  setKart: (kart: Kart) => console.log(kart),
 };
 
 export const PartContext = React.createContext<PartData>(defaultPartData);
@@ -72,14 +73,14 @@ const PartProvider: React.FC = (props) => {
     }
   };
 
-  const setKart = (parts: Part[]) => {
+  const setKart = (kart: Kart) => {
     setPartData((data) => {
       return {
         ...data,
-        selectedDriver: parts[0],
-        selectedBody: parts[1],
-        selectedTire: parts[2],
-        selectedGlider: parts[3],
+        selectedDriver: kart.driver,
+        selectedBody: kart.body,
+        selectedTire: kart.tire,
+        selectedGlider: kart.glider,
       };
     });
   };

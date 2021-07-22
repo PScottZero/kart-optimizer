@@ -6,7 +6,7 @@ interface StatPriorityData {
 }
 
 const defaultStatPriorityData = {
-  statPriority: ['Speed', '', 'Acceleration', 'Weight', 'Handling', 'Traction'],
+  statPriority: ['Speed', 'Acceleration', 'Weight', 'Handling', 'Traction'],
   setNewStatPriority: (statPriority: string[]) => console.log(statPriority),
 };
 

@@ -12,7 +12,7 @@ const ProgressBar: React.FC<ProgressBarProps> = (props) => {
   for (var i = 0; i < 23; i++) {
     separators.push(
       <div
-        key={i}
+        key={`separator-${i}`}
         className="VerticalSeparator"
         style={{ height: (i + 1) % 4 === 0 ? '1rem' : '0.5rem' }}
       ></div>

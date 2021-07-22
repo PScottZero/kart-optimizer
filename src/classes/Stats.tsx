@@ -27,3 +27,27 @@ export class Stats {
     readonly airHandling: number = 0
   ) {}
 }
+
+export const ReducedStats = (
+  speed: number,
+  acceleration: number,
+  weight: number,
+  handling: number,
+  traction: number
+) => {
+  return new Stats(
+    weight,
+    acceleration,
+    0,
+    traction,
+    0,
+    speed,
+    0,
+    0,
+    0,
+    handling,
+    0,
+    0,
+    0
+  );
+};

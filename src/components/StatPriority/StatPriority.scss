@@ -2,8 +2,8 @@
   box-sizing: border-box;
   width: 100%;
   background: #333;
-  height: 19rem;
-  padding: 0.5rem;
+  height: 20.5rem;
+  padding: 1rem;
   border-radius: 2rem;
 }
 
@@ -13,7 +13,8 @@
   padding: 0.5rem;
   font-size: 20px;
   text-align: center;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+  background: #777;
 
   &:hover {
     filter: brightness(90%);

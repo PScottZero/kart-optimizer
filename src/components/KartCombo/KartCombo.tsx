@@ -1,33 +1,30 @@
 import React from 'react';
-import { Part } from '../../classes/Part';
+import { Kart } from '../../classes/Kart';
 import { PartContext } from '../../providers/PartProvider';
 import { statColor, sumOfStats } from '../../util/Common';
 import './KartCombo.scss';
 
 interface KartComboProps {
-  parts: Part[];
+  kart: Kart;
 }
 
 const KartCombo: React.FC<KartComboProps> = (props) => {
   const context = React.useContext(PartContext);
-  const parts: JSX.Element[] = [];
-  for (var part of props.parts) {
-    if (part !== undefined) {
-      parts.push(
-        <div className="KartComboPart">
-          <img src={part.img} alt="Part"></img>
-        </div>
-      );
-    }
-  }
 
   const stats: JSX.Element[] = [];
   const statLabels = ['S', 'A', 'W', 'H', 'T'];
   const statValues =
-    props.parts[0] !== undefined ? sumOfStats(props.parts) : [];
+    props.kart.driver !== undefined
+      ? sumOfStats([
+          props.kart.driver,
+          props.kart.body,
+          props.kart.tire,
+          props.kart.glider,
+        ])
+      : [];
   statLabels.forEach((value, index) =>
     stats.push(
-      <p>
+      <p key={`kart-combo-${index}`}>
         {value}:{' '}
         <span style={{ color: statColor(statValues[index]) }}>
           {statValues[index]}
@@ -37,8 +34,21 @@ const KartCombo: React.FC<KartComboProps> = (props) => {
   );
 
   return (
-    <div className="KartCombo" onClick={() => context.setKart(props.parts)}>
-      <div className="Parts">{parts}</div>
+    <div className="KartCombo" onClick={() => context.setKart(props.kart)}>
+      <div className="Parts">
+        <div className="KartComboPart">
+          <img src={props.kart.driver.img} alt="Driver"></img>
+        </div>
+        <div className="KartComboPart">
+          <img src={props.kart.body.img} alt="Body"></img>
+        </div>
+        <div className="KartComboPart">
+          <img src={props.kart.tire.img} alt="Tire"></img>
+        </div>
+        <div className="KartComboPart">
+          <img src={props.kart.glider.img} alt="Glider"></img>
+        </div>
+      </div>
       <div className="Stats">{stats}</div>
     </div>
   );
