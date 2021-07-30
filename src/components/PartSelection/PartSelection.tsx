@@ -1,37 +1,73 @@
-import React, { Component, MouseEventHandler } from 'react';
-import { Part } from '../../classes/Part';
+import React, { MouseEventHandler } from 'react';
+import { Part, PartType } from '../../classes/Part';
+import { PartContext } from '../../providers/PartProvider';
 import './PartSelection.scss';
 
 interface PartSelectionProps {
   selectedPart: Part;
+  selectedPartType: PartType;
   isSelected: boolean;
+  isFixed: boolean;
   onClick: MouseEventHandler;
 }
 
-export default class PartSelection extends Component<PartSelectionProps> {
-  render() {
-    return (
-      <div className="PartSelection" onClick={this.props.onClick}>
-        <div className="SelectedPart" style={{ background: this.color() }}>
-          <img
-            className="PartImage"
-            src={this.props.selectedPart.img}
-            alt={this.props.selectedPart.name}
-          ></img>
-        </div>
-        <p className="PartLabel">{this.partName()}</p>
-      </div>
-    );
-  }
+const PartSelection: React.FC<PartSelectionProps> = (props) => {
+  const partContext = React.useContext(PartContext);
 
-  color(): string {
-    return this.props.isSelected ? '#26baff' : '#777';
-  }
+  const color = (): string => {
+    return props.isSelected ? '#26baff' : '#777';
+  };
 
-  partName(): string {
-    let split = this.props.selectedPart.name.split(' ');
+  const lockButtonColor = (): string => {
+    return isFixed() ? '#f92470' : '#26baff';
+  };
+
+  const partName = (): string => {
+    let split = props.selectedPart.name.split(' ');
     if (split[split.length - 1].includes('(')) split.pop();
     if (split.length >= 2) return `${split[0]} ${split[1]}`;
     return split.join(' ');
-  }
-}
+  };
+
+  const isFixed = () => {
+    switch (props.selectedPartType) {
+      case PartType.DRIVER:
+        return partContext.selectedDriverIsFixed;
+      case PartType.BODY:
+        return partContext.selectedBodyIsFixed;
+      case PartType.TIRE:
+        return partContext.selectedTireIsFixed;
+      case PartType.GLIDER:
+        return partContext.selectedGliderIsFixed;
+    }
+  };
+
+  const toggleFixed = (type: PartType) => {
+    isFixed() ? partContext.unsetFixed(type) : partContext.setFixed(type);
+  };
+
+  return (
+    <div className="PartSelection">
+      <div
+        className="SelectedPart"
+        style={{ background: color() }}
+        onClick={props.onClick}
+      >
+        <img
+          className="PartImage"
+          src={props.selectedPart.img}
+          alt={props.selectedPart.name}
+        ></img>
+      </div>
+      <div
+        className="PartLock"
+        style={{ background: lockButtonColor() }}
+        onClick={() => toggleFixed(props.selectedPartType)}
+      >
+        <p className="PartLabel">{partName()}</p>
+      </div>
+    </div>
+  );
+};
+
+export default PartSelection;

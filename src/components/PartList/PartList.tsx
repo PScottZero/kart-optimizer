@@ -14,10 +14,10 @@ const PartList: React.FC<PartListProps> = (props) => {
 
   const isSelected = (part: Part) => {
     return (
-      part === partData.selectedDriver ||
-      part === partData.selectedBody ||
-      part === partData.selectedTire ||
-      part === partData.selectedGlider
+      part.name === partData.selectedDriver.name ||
+      part.name === partData.selectedBody.name ||
+      part.name === partData.selectedTire.name ||
+      part.name === partData.selectedGlider.name
     );
   };
 

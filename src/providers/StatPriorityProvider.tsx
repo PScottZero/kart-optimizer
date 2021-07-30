@@ -1,13 +1,29 @@
 import React from 'react';
 
 interface StatPriorityData {
-  statPriority: string[];
-  setNewStatPriority: (statPriority: string[]) => void;
+  statPriority: StatNames[];
+  setNewStatPriority: (statPriority: StatNames[]) => void;
+}
+
+export enum StatNames {
+  SPEED = 'Speed',
+  ACCELERATION = 'Acceleration',
+  WEIGHT = 'Weight',
+  HANDLING = 'Handling',
+  TRACTION = 'Traction',
+  PRIORITY = '',
 }
 
 const defaultStatPriorityData = {
-  statPriority: ['Speed', 'Acceleration', 'Weight', 'Handling', 'Traction'],
-  setNewStatPriority: (statPriority: string[]) => console.log(statPriority),
+  statPriority: [
+    StatNames.SPEED,
+    StatNames.ACCELERATION,
+    StatNames.PRIORITY,
+    StatNames.WEIGHT,
+    StatNames.HANDLING,
+    StatNames.TRACTION,
+  ],
+  setNewStatPriority: (statPriority: StatNames[]) => console.log(statPriority),
 };
 
 export const StatPriorityContext = React.createContext<StatPriorityData>(
@@ -20,7 +36,7 @@ const StatPriorityProvider: React.FC = (props) => {
     defaultStatPriorityData
   );
 
-  const setNewStatPriority = (statPriority: string[]) => {
+  const setNewStatPriority = (statPriority: StatNames[]) => {
     setStatPriority((data) => {
       return { ...data, statPriority: statPriority };
     });

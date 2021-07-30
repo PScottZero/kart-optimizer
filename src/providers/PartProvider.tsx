@@ -15,18 +15,15 @@ export interface PartData {
   selectedBody: Part;
   selectedTire: Part;
   selectedGlider: Part;
-  statPriority: string[];
+  selectedDriverIsFixed: boolean;
+  selectedBodyIsFixed: boolean;
+  selectedTireIsFixed: boolean;
+  selectedGliderIsFixed: boolean;
   setPart: (part: Part, type: PartType) => void;
   setKart: (kart: Kart) => void;
+  setFixed: (type: PartType) => void;
+  unsetFixed: (type: PartType) => void;
 }
-
-const defaultStatPriority = [
-  'Speed',
-  'Acceleration',
-  'Weight',
-  'Handling',
-  'Traction',
-];
 
 export const defaultPartData: PartData = {
   drivers: [],
@@ -37,9 +34,14 @@ export const defaultPartData: PartData = {
   selectedBody: new Part(),
   selectedTire: new Part(),
   selectedGlider: new Part(),
-  statPriority: defaultStatPriority,
+  selectedDriverIsFixed: false,
+  selectedBodyIsFixed: false,
+  selectedTireIsFixed: false,
+  selectedGliderIsFixed: false,
   setPart: (part: Part, type: PartType) => console.log(part, type),
   setKart: (kart: Kart) => console.log(kart),
+  setFixed: (type: PartType) => console.log(type),
+  unsetFixed: (type: PartType) => console.log(type),
 };
 
 export const PartContext = React.createContext<PartData>(defaultPartData);
@@ -85,19 +87,98 @@ const PartProvider: React.FC = (props) => {
     });
   };
 
+  const setFixed = (type: PartType) => {
+    switch (type) {
+      case PartType.DRIVER:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedDriverIsFixed: true,
+          };
+        });
+        break;
+      case PartType.BODY:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedBodyIsFixed: true,
+          };
+        });
+        break;
+      case PartType.TIRE:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedTireIsFixed: true,
+          };
+        });
+        break;
+      case PartType.GLIDER:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedGliderIsFixed: true,
+          };
+        });
+        break;
+    }
+  };
+
+  const unsetFixed = (type: PartType) => {
+    switch (type) {
+      case PartType.DRIVER:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedDriverIsFixed: false,
+          };
+        });
+        break;
+      case PartType.BODY:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedBodyIsFixed: false,
+          };
+        });
+        break;
+      case PartType.TIRE:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedTireIsFixed: false,
+          };
+        });
+        break;
+      case PartType.GLIDER:
+        setPartData((data) => {
+          return {
+            ...data,
+            selectedGliderIsFixed: false,
+          };
+        });
+        break;
+    }
+  };
+
   React.useEffect(() => {
     setPartData({
-      drivers: drivers,
-      bodies: bodies,
-      tires: tires,
-      gliders: gliders,
-      selectedDriver: drivers[0],
-      selectedBody: bodies[0],
-      selectedTire: tires[0],
-      selectedGlider: gliders[0],
-      statPriority: defaultStatPriority,
+      drivers: drivers.map((driver) => Object.assign(new Part(), driver)),
+      bodies: bodies.map((body) => Object.assign(new Part(), body)),
+      tires: tires.map((tire) => Object.assign(new Part(), tire)),
+      gliders: gliders.map((glider) => Object.assign(new Part(), glider)),
+      selectedDriver: Object.assign(new Part(), drivers[0]),
+      selectedBody: Object.assign(new Part(), bodies[0]),
+      selectedTire: Object.assign(new Part(), tires[0]),
+      selectedGlider: Object.assign(new Part(), gliders[0]),
+      selectedDriverIsFixed: false,
+      selectedBodyIsFixed: false,
+      selectedTireIsFixed: false,
+      selectedGliderIsFixed: false,
       setPart: setPart,
       setKart: setKart,
+      setFixed: setFixed,
+      unsetFixed: unsetFixed,
     });
   }, []);
 

@@ -1,34 +1,10 @@
 .Optimizer {
   grid-area: optimizer;
   width: 100%;
-  height: 20.5rem;
+  height: 22.5rem;
   background: #444;
   box-sizing: border-box;
   padding: 0 2rem;
-}
-
-.Config {
-  float: left;
-  height: 100%;
-  width: 12rem;
-  padding: 0 1rem 1rem 0;
-  box-sizing: border-box;
-
-  button {
-    font-family: 'Prompt', Arial, sans-serif;
-    background: linear-gradient(to right, #26baff, #f92470);
-    padding: 1rem;
-    color: white;
-    border-radius: 10rem;
-    width: 100%;
-    transition: 0.2s;
-    font-size: 20px;
-    margin-top: 1rem;
-
-    &:hover {
-      filter: brightness(70%);
-    }
-  }
 }
 
 .Options {

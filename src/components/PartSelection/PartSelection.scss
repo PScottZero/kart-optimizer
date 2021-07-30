@@ -1,8 +1,15 @@
 .PartSelection {
   box-sizing: border-box;
   width: 9em;
-  height: 11rem;
+  height: 12.25rem;
   margin: 0.5rem;
+}
+
+.PartLock {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  transition: 0.2s;
 }
 
 .PartLabel {
@@ -10,7 +17,7 @@
   box-sizing: border-box;
   font-size: 18px;
   text-align: center;
-  margin-top: 0.75rem;
+  white-space: nowrap;
 }
 
 .SelectedPart {

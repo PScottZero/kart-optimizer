@@ -22,7 +22,7 @@ export const KartConfig: React.FC = () => {
     });
   };
 
-  const type = (partList: Part[]): PartType => {
+  const partListType = (partList: Part[]): PartType => {
     if (partList.length > 0) {
       switch (partList[0].name) {
         case 'Standard Kart':
@@ -45,7 +45,7 @@ export const KartConfig: React.FC = () => {
   };
 
   const isSelectedCategory = (partList: Part[]): boolean => {
-    return type(partList) === type(state.selectedPartList);
+    return partListType(partList) === partListType(state.selectedPartList);
   };
 
   return (
@@ -54,27 +54,38 @@ export const KartConfig: React.FC = () => {
         <div className="PartOptions">
           <PartSelection
             selectedPart={partData.selectedDriver}
+            selectedPartType={partListType(partData.drivers)}
             isSelected={isSelectedCategory(partData.drivers)}
+            isFixed={partData.selectedDriverIsFixed}
             onClick={() => show(partData.drivers)}
           ></PartSelection>
           <PartSelection
             selectedPart={partData.selectedBody}
+            selectedPartType={partListType(partData.bodies)}
             isSelected={isSelectedCategory(partData.bodies)}
+            isFixed={partData.selectedBodyIsFixed}
             onClick={() => show(partData.bodies)}
           ></PartSelection>
           <PartSelection
             selectedPart={partData.selectedTire}
+            selectedPartType={partListType(partData.tires)}
             isSelected={isSelectedCategory(partData.tires)}
+            isFixed={partData.selectedTireIsFixed}
             onClick={() => show(partData.tires)}
           ></PartSelection>
           <PartSelection
             selectedPart={partData.selectedGlider}
+            selectedPartType={partListType(partData.gliders)}
             isSelected={isSelectedCategory(partData.gliders)}
+            isFixed={partData.selectedGliderIsFixed}
             onClick={() => show(partData.gliders)}
           ></PartSelection>
         </div>
         <div className="Separator"></div>
-        <PartList partList={partList()} type={type(partList())}></PartList>
+        <PartList
+          partList={partList()}
+          type={partListType(partList())}
+        ></PartList>
       </div>
     </div>
   );

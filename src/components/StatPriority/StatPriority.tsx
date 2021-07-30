@@ -4,14 +4,30 @@ import {
   SortableContainer,
   SortableElement,
 } from 'react-sortable-hoc';
-import { StatPriorityContext } from '../../providers/StatPriorityProvider';
+import {
+  StatNames,
+  StatPriorityContext,
+} from '../../providers/StatPriorityProvider';
 import './StatPriority.scss';
 
 const StatPriority: React.FC = () => {
   const context = React.useContext(StatPriorityContext);
+  const COLOR_TOP_PRIORITY = '#f92470';
+  const COLOR_REGULAR_PRIORITY = '#777';
+  const COLOR_PRIORITY_BAR = '#26baff';
 
-  const SortableItem = SortableElement(({ value }: any) => (
-    <div className="Stat">
+  const statColor = (index: number) => {
+    if (index < context.statPriority.indexOf(StatNames.PRIORITY)) {
+      return COLOR_TOP_PRIORITY;
+    } else if (index > context.statPriority.indexOf(StatNames.PRIORITY)) {
+      return COLOR_REGULAR_PRIORITY;
+    } else {
+      return COLOR_PRIORITY_BAR;
+    }
+  };
+
+  const SortableItem = SortableElement(({ value, currentIndex }: any) => (
+    <div className="Stat" style={{ background: statColor(currentIndex) }}>
       <p>{value}</p>
     </div>
   ));
@@ -23,6 +39,7 @@ const StatPriority: React.FC = () => {
           <SortableItem
             key={`item-${index}`}
             index={index}
+            currentIndex={index}
             value={value}
           ></SortableItem>
         ))}
