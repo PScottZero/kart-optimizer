@@ -3,6 +3,7 @@
   "name": "kart-optimizer",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://kart-optimizer-backend.us-east-2.elasticbeanstalk.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -51,6 +52,5 @@
     "prettier": "2.3.2",
     "react-script-tag": "^1.1.2",
     "react-sortable-hoc": "^2.0.0"
-  },
-  "proxy": "http://localhost:8080"
+  }
 }

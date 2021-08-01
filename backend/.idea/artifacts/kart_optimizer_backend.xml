@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kart-optimizer-backend">
+    <output-path>$PROJECT_DIR$/out/artifacts/kart_optimizer_backend</output-path>
+    <root id="archive" name="kart-optimizer-backend.war" />
+  </artifact>
+</component>

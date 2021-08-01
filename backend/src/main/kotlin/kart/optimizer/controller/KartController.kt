@@ -5,16 +5,19 @@ import kart.optimizer.config.KartConfig
 import kart.optimizer.model.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import kotlin.math.abs
 
 @RestController
+@RequestMapping("/")
 class KartController {
     @Autowired
     private lateinit var kartConfig: KartConfig
+
+    @GetMapping("/")
+    fun getHome(): ResponseEntity<String> {
+        return ResponseEntity.ok("Kart Optimizer Backend")
+    }
 
     @GetMapping("/drivers")
     @ApiOperation("Return list of drivers")
