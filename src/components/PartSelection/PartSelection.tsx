@@ -14,8 +14,8 @@ interface PartSelectionProps {
 const PartSelection: React.FC<PartSelectionProps> = (props) => {
   const partContext = React.useContext(PartContext);
 
-  const color = (): string => {
-    return props.isSelected ? '#26baff' : '#777';
+  const backgroundColor = (): string => {
+    return props.isSelected && props.selectedPart !== undefined ? '#26baff' : '#777';
   };
 
   const lockButtonColor = (): string => {
@@ -48,21 +48,21 @@ const PartSelection: React.FC<PartSelectionProps> = (props) => {
     <div className="PartSelection">
       <div
         className="SelectedPart"
-        style={{ background: color() }}
+        style={{ background: backgroundColor() }}
         onClick={props.onClick}
       >
         <img
           className="PartImage"
-          src={props.selectedPart.img}
-          alt={props.selectedPart.name}
+          src={props.selectedPart !== undefined ? props.selectedPart.img : ''}
+          alt={props.selectedPart !== undefined ? props.selectedPart.name : ''}
         ></img>
       </div>
       <div
         className="PartLock"
         style={{ background: lockButtonColor() }}
-        onClick={() => toggleFixed(props.selectedPartType)}
+        onClick={() => props.selectedPart !== undefined ? toggleFixed(props.selectedPartType) : {}}
       >
-        <p className="PartLabel">{partName()}</p>
+        <p className="PartLabel">{props.selectedPart !== undefined ? partName() : 'None'}</p>
       </div>
     </div>
   );

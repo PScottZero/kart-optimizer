@@ -1,0 +1,762 @@
+[
+  {
+    "name": "Standard Kart",
+    "img": "https://mario.wiki.gallery/images/thumb/0/05/StandardKartBodyMK8.png/100px-StandardKartBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 3,
+      "offRoadTraction": 3,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Pipe Frame",
+    "img": "https://mario.wiki.gallery/images/thumb/d/d1/PipeFrameBodyMK8.png/100px-PipeFrameBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 6,
+      "onRoadTraction": 3,
+      "offRoadTraction": 4,
+      "miniTurbo": 6,
+      "groundSpeed": 1,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 1,
+      "airSpeed": 1,
+      "groundHandling": 5,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Mach 8",
+    "img": "https://mario.wiki.gallery/images/thumb/d/df/Mach8BodyMK8.png/100px-Mach8BodyMK8.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 3,
+      "onRoadTraction": 2,
+      "offRoadTraction": 4,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 5,
+      "airSpeed": 4,
+      "groundHandling": 2,
+      "waterHandling": 2,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Steel Driver",
+    "img": "https://mario.wiki.gallery/images/thumb/9/94/Steel_Driver.png/100px-Steel_Driver.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 1,
+      "onRoadTraction": 1,
+      "offRoadTraction": 3,
+      "miniTurbo": 2,
+      "groundSpeed": 4,
+      "waterSpeed": 5,
+      "antiGravitySpeed": 2,
+      "airSpeed": 0,
+      "groundHandling": 1,
+      "waterHandling": 5,
+      "antiGravityHandling": 1,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Cat Cruiser",
+    "img": "https://mario.wiki.gallery/images/thumb/f/f4/CatCruiserBodyMK8.png/100px-CatCruiserBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 5,
+      "onRoadTraction": 4,
+      "offRoadTraction": 3,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 4,
+      "groundHandling": 4,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Circuit Special",
+    "img": "https://mario.wiki.gallery/images/thumb/6/6c/CircuitSpecialBodyMK8.png/100px-CircuitSpecialBodyMK8.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 1,
+      "onRoadTraction": 3,
+      "offRoadTraction": 1,
+      "miniTurbo": 1,
+      "groundSpeed": 5,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 4,
+      "airSpeed": 2,
+      "groundHandling": 1,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "Tri-Speeder",
+    "img": "https://mario.wiki.gallery/images/thumb/5/56/TrispeederBodyMK8.png/100px-TrispeederBodyMK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 1,
+      "onRoadTraction": 1,
+      "offRoadTraction": 3,
+      "miniTurbo": 2,
+      "groundSpeed": 4,
+      "waterSpeed": 5,
+      "antiGravitySpeed": 2,
+      "airSpeed": 0,
+      "groundHandling": 1,
+      "waterHandling": 5,
+      "antiGravityHandling": 1,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Badwagon",
+    "img": "https://mario.wiki.gallery/images/thumb/c/c2/BadwagonBodyMK8.png/100px-BadwagonBodyMK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 0,
+      "onRoadTraction": 2,
+      "offRoadTraction": 5,
+      "miniTurbo": 0,
+      "groundSpeed": 5,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 1,
+      "groundHandling": 0,
+      "waterHandling": 1,
+      "antiGravityHandling": 1,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "Prancer",
+    "img": "https://mario.wiki.gallery/images/thumb/f/ff/PrancerBodyMK8.png/100px-PrancerBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 2,
+      "onRoadTraction": 1,
+      "offRoadTraction": 2,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 2,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Biddybuggy",
+    "img": "https://mario.wiki.gallery/images/thumb/4/45/BiddybuggyBodyMK8.png/100px-BiddybuggyBodyMK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 7,
+      "onRoadTraction": 1,
+      "offRoadTraction": 4,
+      "miniTurbo": 7,
+      "groundSpeed": 0,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 5,
+      "waterHandling": 4,
+      "antiGravityHandling": 5,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Landship",
+    "img": "https://mario.wiki.gallery/images/thumb/6/6d/LandshipBodyMK8.png/100px-LandshipBodyMK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 6,
+      "onRoadTraction": 0,
+      "offRoadTraction": 6,
+      "miniTurbo": 6,
+      "groundSpeed": 1,
+      "waterSpeed": 5,
+      "antiGravitySpeed": 0,
+      "airSpeed": 2,
+      "groundHandling": 4,
+      "waterHandling": 5,
+      "antiGravityHandling": 2,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Sneeker",
+    "img": "https://mario.wiki.gallery/images/thumb/4/47/SneakerBodyMK8.png/100px-SneakerBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 2,
+      "onRoadTraction": 1,
+      "offRoadTraction": 0,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Sports Coupe",
+    "img": "https://mario.wiki.gallery/images/thumb/f/f8/SportsCoupeMK8.png/100px-SportsCoupeMK8.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 3,
+      "onRoadTraction": 2,
+      "offRoadTraction": 4,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 5,
+      "airSpeed": 4,
+      "groundHandling": 2,
+      "waterHandling": 2,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Gold Standard",
+    "img": "https://mario.wiki.gallery/images/thumb/f/fe/Gold_Standard.png/100px-Gold_Standard.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 2,
+      "onRoadTraction": 1,
+      "offRoadTraction": 0,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Standard Bike",
+    "img": "https://mario.wiki.gallery/images/thumb/8/84/StandardBikeBodyMK8.png/100px-StandardBikeBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 5,
+      "onRoadTraction": 3,
+      "offRoadTraction": 5,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 3,
+      "antiGravityHandling": 4,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Comet",
+    "img": "https://mario.wiki.gallery/images/thumb/0/0e/CometBodyMK8.png/100px-CometBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 5,
+      "onRoadTraction": 4,
+      "offRoadTraction": 3,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 4,
+      "groundHandling": 4,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Sport Bike",
+    "img": "https://mario.wiki.gallery/images/thumb/f/fe/SportBikeBodyMK8.png/100px-SportBikeBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 2,
+      "onRoadTraction": 1,
+      "offRoadTraction": 2,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 2,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "The Duke",
+    "img": "https://mario.wiki.gallery/images/thumb/8/8a/TheDukeBodyMK8.png/100px-TheDukeBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 3,
+      "offRoadTraction": 3,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Flame Rider",
+    "img": "https://mario.wiki.gallery/images/thumb/3/31/FlameRiderBodyMK8.png/100px-FlameRiderBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 5,
+      "onRoadTraction": 3,
+      "offRoadTraction": 5,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 3,
+      "antiGravityHandling": 4,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Varmint",
+    "img": "https://mario.wiki.gallery/images/thumb/d/d0/VarmintBodyMK8.png/100px-VarmintBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 6,
+      "onRoadTraction": 3,
+      "offRoadTraction": 4,
+      "miniTurbo": 6,
+      "groundSpeed": 1,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 1,
+      "airSpeed": 1,
+      "groundHandling": 5,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Mr. Scooty",
+    "img": "https://mario.wiki.gallery/images/thumb/1/18/MrScootyBodyMK8.png/100px-MrScootyBodyMK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 7,
+      "onRoadTraction": 1,
+      "offRoadTraction": 4,
+      "miniTurbo": 7,
+      "groundSpeed": 0,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 5,
+      "waterHandling": 4,
+      "antiGravityHandling": 5,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Jet Bike",
+    "img": "https://mario.wiki.gallery/images/thumb/1/12/JetBikeBodyMK8.png/100px-JetBikeBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 2,
+      "onRoadTraction": 1,
+      "offRoadTraction": 2,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 2,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Yoshi Bike",
+    "img": "https://mario.wiki.gallery/images/thumb/6/62/YoshiBikeBodyMK8.png/100px-YoshiBikeBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 5,
+      "onRoadTraction": 4,
+      "offRoadTraction": 3,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 4,
+      "groundHandling": 4,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Standard ATV",
+    "img": "https://mario.wiki.gallery/images/thumb/2/23/StandardATVBodyMK8.png/100px-StandardATVBodyMK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 0,
+      "onRoadTraction": 2,
+      "offRoadTraction": 5,
+      "miniTurbo": 0,
+      "groundSpeed": 5,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 1,
+      "groundHandling": 0,
+      "waterHandling": 1,
+      "antiGravityHandling": 1,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "Wild Wiggler",
+    "img": "https://mario.wiki.gallery/images/thumb/a/aa/WildWigglerBodyMK8.png/100px-WildWigglerBodyMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 5,
+      "onRoadTraction": 3,
+      "offRoadTraction": 5,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 3,
+      "antiGravityHandling": 4,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Teddy Buggy",
+    "img": "https://mario.wiki.gallery/images/thumb/f/fa/TeddyBuggyBodyMK8.png/100px-TeddyBuggyBodyMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 5,
+      "onRoadTraction": 4,
+      "offRoadTraction": 3,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 4,
+      "groundHandling": 4,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "GLA",
+    "img": "https://mario.wiki.gallery/images/thumb/c/c2/GLA-MK8.png/100px-GLA-MK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 0,
+      "onRoadTraction": 2,
+      "offRoadTraction": 5,
+      "miniTurbo": 0,
+      "groundSpeed": 5,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 1,
+      "groundHandling": 0,
+      "waterHandling": 1,
+      "antiGravityHandling": 1,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "W 25 Silver Arrow",
+    "img": "https://mario.wiki.gallery/images/thumb/2/25/W25SilverArrow-MK8.png/100px-W25SilverArrow-MK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 5,
+      "onRoadTraction": 3,
+      "offRoadTraction": 5,
+      "miniTurbo": 5,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 3,
+      "antiGravityHandling": 4,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "300 SL Roadster",
+    "img": "https://mario.wiki.gallery/images/thumb/f/f4/300SLRoadster_MK8.png/100px-300SLRoadster_MK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 3,
+      "offRoadTraction": 3,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Blue Falcon",
+    "img": "https://mario.wiki.gallery/images/thumb/f/f6/MK8BlueFalcon.png/100px-MK8BlueFalcon.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 3,
+      "onRoadTraction": 1,
+      "offRoadTraction": 3,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 3,
+      "groundHandling": 2,
+      "waterHandling": 3,
+      "antiGravityHandling": 5,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Tanooki Kart",
+    "img": "https://mario.wiki.gallery/images/thumb/7/76/MK8_Tanooki_Buggy_Sprite.png/100px-MK8_Tanooki_Buggy_Sprite.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 2,
+      "onRoadTraction": 4,
+      "offRoadTraction": 7,
+      "miniTurbo": 3,
+      "groundSpeed": 2,
+      "waterSpeed": 4,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "B Dasher",
+    "img": "https://mario.wiki.gallery/images/thumb/1/15/ZeldaMK8Bdasher.png/100px-ZeldaMK8Bdasher.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 1,
+      "onRoadTraction": 3,
+      "offRoadTraction": 1,
+      "miniTurbo": 1,
+      "groundSpeed": 5,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 4,
+      "airSpeed": 2,
+      "groundHandling": 1,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "Master Cycle",
+    "img": "https://mario.wiki.gallery/images/thumb/8/8a/MK8MasterCycle.png/100px-MK8MasterCycle.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 2,
+      "onRoadTraction": 1,
+      "offRoadTraction": 0,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 2,
+      "antiGravityHandling": 3,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Streetle",
+    "img": "https://mario.wiki.gallery/images/thumb/c/cf/MK8Streetle.png/100px-MK8Streetle.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 6,
+      "onRoadTraction": 0,
+      "offRoadTraction": 6,
+      "miniTurbo": 6,
+      "groundSpeed": 1,
+      "waterSpeed": 5,
+      "antiGravitySpeed": 0,
+      "airSpeed": 2,
+      "groundHandling": 4,
+      "waterHandling": 5,
+      "antiGravityHandling": 2,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "P-Wing",
+    "img": "https://mario.wiki.gallery/images/thumb/c/cd/MK8PWing.png/100px-MK8PWing.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 1,
+      "onRoadTraction": 3,
+      "offRoadTraction": 1,
+      "miniTurbo": 1,
+      "groundSpeed": 5,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 4,
+      "airSpeed": 2,
+      "groundHandling": 1,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "City Tripper",
+    "img": "https://mario.wiki.gallery/images/thumb/b/be/MK8_Light-Green_City_Tripper.png/100px-MK8_Light-Green_City_Tripper.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 6,
+      "onRoadTraction": 3,
+      "offRoadTraction": 4,
+      "miniTurbo": 6,
+      "groundSpeed": 1,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 1,
+      "airSpeed": 1,
+      "groundHandling": 5,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Bone Rattler",
+    "img": "https://mario.wiki.gallery/images/thumb/0/0a/MK8BoneRattler.png/100px-MK8BoneRattler.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 1,
+      "onRoadTraction": 1,
+      "offRoadTraction": 3,
+      "miniTurbo": 2,
+      "groundSpeed": 4,
+      "waterSpeed": 5,
+      "antiGravitySpeed": 2,
+      "airSpeed": 0,
+      "groundHandling": 1,
+      "waterHandling": 5,
+      "antiGravityHandling": 1,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Koopa Clown",
+    "img": "https://mario.wiki.gallery/images/thumb/7/70/MK8DX_Koopa_Clown.png/100px-MK8DX_Koopa_Clown.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 2,
+      "onRoadTraction": 4,
+      "offRoadTraction": 7,
+      "miniTurbo": 3,
+      "groundSpeed": 2,
+      "waterSpeed": 4,
+      "antiGravitySpeed": 3,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Splat Buggy",
+    "img": "https://mario.wiki.gallery/images/thumb/6/63/MK8DX_Splat_Buggy.png/100px-MK8DX_Splat_Buggy.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 3,
+      "onRoadTraction": 1,
+      "offRoadTraction": 3,
+      "miniTurbo": 3,
+      "groundSpeed": 4,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 3,
+      "groundHandling": 2,
+      "waterHandling": 3,
+      "antiGravityHandling": 5,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Inkstriker",
+    "img": "https://mario.wiki.gallery/images/thumb/e/eb/MK8DX_Inkstriker.png/100px-MK8DX_Inkstriker.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 3,
+      "onRoadTraction": 2,
+      "offRoadTraction": 4,
+      "miniTurbo": 4,
+      "groundSpeed": 3,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 5,
+      "airSpeed": 4,
+      "groundHandling": 2,
+      "waterHandling": 2,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  }
+]

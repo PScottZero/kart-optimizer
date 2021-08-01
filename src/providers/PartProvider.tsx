@@ -141,7 +141,7 @@ const PartProvider: React.FC = (props) => {
       } else {
         return []
       }
-    } catch {
+    } catch (error) {
       return []
     }
   }

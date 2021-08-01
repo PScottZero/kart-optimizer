@@ -1,0 +1,401 @@
+[
+  {
+    "name": "Standard",
+    "img": "https://mario.wiki.gallery/images/thumb/a/a8/StandardTiresMK8.png/100px-StandardTiresMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 2,
+      "offRoadTraction": 5,
+      "miniTurbo": 3,
+      "groundSpeed": 2,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 2,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Monster",
+    "img": "https://mario.wiki.gallery/images/thumb/2/29/MonsterTiresMK8.png/100px-MonsterTiresMK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 2,
+      "onRoadTraction": 3,
+      "offRoadTraction": 7,
+      "miniTurbo": 2,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 0,
+      "waterHandling": 1,
+      "antiGravityHandling": 0,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Roller",
+    "img": "https://mario.wiki.gallery/images/thumb/7/76/RollerTiresMK8.png/100px-RollerTiresMK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 6,
+      "onRoadTraction": 0,
+      "offRoadTraction": 4,
+      "miniTurbo": 6,
+      "groundSpeed": 0,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 0,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Slim",
+    "img": "https://mario.wiki.gallery/images/thumb/f/f8/SlimTiresMK8.png/100px-SlimTiresMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 2,
+      "onRoadTraction": 4,
+      "offRoadTraction": 1,
+      "miniTurbo": 2,
+      "groundSpeed": 3,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 2,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 3,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Slick",
+    "img": "https://mario.wiki.gallery/images/thumb/d/dd/SlickTiresMK8.png/100px-SlickTiresMK8.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 1,
+      "onRoadTraction": 4,
+      "offRoadTraction": 0,
+      "miniTurbo": 0,
+      "groundSpeed": 4,
+      "waterSpeed": 0,
+      "antiGravitySpeed": 4,
+      "airSpeed": 0,
+      "groundHandling": 2,
+      "waterHandling": 0,
+      "antiGravityHandling": 2,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Metal",
+    "img": "https://mario.wiki.gallery/images/thumb/9/96/MetalTiresMK8.png/100px-MetalTiresMK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 0,
+      "onRoadTraction": 1,
+      "offRoadTraction": 2,
+      "miniTurbo": 0,
+      "groundSpeed": 4,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 1,
+      "airSpeed": 2,
+      "groundHandling": 2,
+      "waterHandling": 2,
+      "antiGravityHandling": 1,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "Button",
+    "img": "https://mario.wiki.gallery/images/thumb/0/07/ButtonTiresMK8.png/100px-ButtonTiresMK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 5,
+      "onRoadTraction": 1,
+      "offRoadTraction": 3,
+      "miniTurbo": 5,
+      "groundSpeed": 1,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 2,
+      "airSpeed": 2,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Off-Road",
+    "img": "https://mario.wiki.gallery/images/thumb/2/25/Off-Road.png/100px-Off-Road.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 3,
+      "onRoadTraction": 3,
+      "offRoadTraction": 6,
+      "miniTurbo": 1,
+      "groundSpeed": 3,
+      "waterSpeed": 4,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 1,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Sponge",
+    "img": "https://mario.wiki.gallery/images/thumb/4/4c/SpongeTiresMK8.png/100px-SpongeTiresMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 4,
+      "onRoadTraction": 2,
+      "offRoadTraction": 6,
+      "miniTurbo": 4,
+      "groundSpeed": 1,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 1,
+      "airSpeed": 4,
+      "groundHandling": 2,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Wood",
+    "img": "https://mario.wiki.gallery/images/thumb/0/03/WoodTiresMK8.png/100px-WoodTiresMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 2,
+      "onRoadTraction": 4,
+      "offRoadTraction": 1,
+      "miniTurbo": 2,
+      "groundSpeed": 3,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 2,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 3,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Cushion",
+    "img": "https://mario.wiki.gallery/images/thumb/9/92/CushionTiresMK8.png/100px-CushionTiresMK8.png",
+    "stats": {
+      "weight": 1,
+      "acceleration": 4,
+      "onRoadTraction": 2,
+      "offRoadTraction": 6,
+      "miniTurbo": 4,
+      "groundSpeed": 1,
+      "waterSpeed": 1,
+      "antiGravitySpeed": 1,
+      "airSpeed": 4,
+      "groundHandling": 2,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Blue Standard",
+    "img": "https://mario.wiki.gallery/images/thumb/d/db/Blue_Standard.png/100px-Blue_Standard.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 2,
+      "offRoadTraction": 5,
+      "miniTurbo": 3,
+      "groundSpeed": 2,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 2,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Hot Monster",
+    "img": "https://mario.wiki.gallery/images/thumb/d/d1/HotMonsterTiresMK8.png/100px-HotMonsterTiresMK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 2,
+      "onRoadTraction": 3,
+      "offRoadTraction": 7,
+      "miniTurbo": 2,
+      "groundSpeed": 2,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 0,
+      "waterHandling": 1,
+      "antiGravityHandling": 0,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Azure Roller",
+    "img": "https://mario.wiki.gallery/images/thumb/f/fe/AzureRollerTiresMK8.png/100px-AzureRollerTiresMK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 6,
+      "onRoadTraction": 0,
+      "offRoadTraction": 4,
+      "miniTurbo": 6,
+      "groundSpeed": 0,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 0,
+      "airSpeed": 3,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 4,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Crimson Slim",
+    "img": "https://mario.wiki.gallery/images/thumb/7/71/CrimsonSlimTiresMK8.png/100px-CrimsonSlimTiresMK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 2,
+      "onRoadTraction": 4,
+      "offRoadTraction": 1,
+      "miniTurbo": 2,
+      "groundSpeed": 3,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 4,
+      "airSpeed": 2,
+      "groundHandling": 4,
+      "waterHandling": 4,
+      "antiGravityHandling": 3,
+      "airHandling": 4
+    }
+  },
+  {
+    "name": "Cyber Slick",
+    "img": "https://mario.wiki.gallery/images/thumb/2/29/CyberSlickTiresMK8.png/100px-CyberSlickTiresMK8.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 1,
+      "onRoadTraction": 4,
+      "offRoadTraction": 0,
+      "miniTurbo": 0,
+      "groundSpeed": 4,
+      "waterSpeed": 0,
+      "antiGravitySpeed": 4,
+      "airSpeed": 0,
+      "groundHandling": 2,
+      "waterHandling": 0,
+      "antiGravityHandling": 2,
+      "airHandling": 1
+    }
+  },
+  {
+    "name": "Retro Off-Road",
+    "img": "https://mario.wiki.gallery/images/thumb/4/48/Retro_Off-Road.png/100px-Retro_Off-Road.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 3,
+      "onRoadTraction": 3,
+      "offRoadTraction": 6,
+      "miniTurbo": 1,
+      "groundSpeed": 3,
+      "waterSpeed": 4,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 1,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Gold Tires",
+    "img": "https://mario.wiki.gallery/images/thumb/5/52/Gold_Tires_MK8.png/100px-Gold_Tires_MK8.png",
+    "stats": {
+      "weight": 4,
+      "acceleration": 0,
+      "onRoadTraction": 1,
+      "offRoadTraction": 2,
+      "miniTurbo": 0,
+      "groundSpeed": 4,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 1,
+      "airSpeed": 2,
+      "groundHandling": 2,
+      "waterHandling": 2,
+      "antiGravityHandling": 1,
+      "airHandling": 0
+    }
+  },
+  {
+    "name": "GLA Tires",
+    "img": "https://mario.wiki.gallery/images/thumb/b/ba/GLATires-MK8.png/100px-GLATires-MK8.png",
+    "stats": {
+      "weight": 2,
+      "acceleration": 4,
+      "onRoadTraction": 2,
+      "offRoadTraction": 5,
+      "miniTurbo": 3,
+      "groundSpeed": 2,
+      "waterSpeed": 3,
+      "antiGravitySpeed": 2,
+      "airSpeed": 3,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 3,
+      "airHandling": 3
+    }
+  },
+  {
+    "name": "Triforce Tires",
+    "img": "https://mario.wiki.gallery/images/thumb/9/9d/MK8-TriforceTires.png/100px-MK8-TriforceTires.png",
+    "stats": {
+      "weight": 3,
+      "acceleration": 3,
+      "onRoadTraction": 3,
+      "offRoadTraction": 6,
+      "miniTurbo": 1,
+      "groundSpeed": 3,
+      "waterSpeed": 4,
+      "antiGravitySpeed": 2,
+      "airSpeed": 1,
+      "groundHandling": 1,
+      "waterHandling": 1,
+      "antiGravityHandling": 2,
+      "airHandling": 2
+    }
+  },
+  {
+    "name": "Leaf Tires",
+    "img": "https://mario.wiki.gallery/images/thumb/f/f9/Leaf_Tires_MK8.png/100px-Leaf_Tires_MK8.png",
+    "stats": {
+      "weight": 0,
+      "acceleration": 5,
+      "onRoadTraction": 1,
+      "offRoadTraction": 3,
+      "miniTurbo": 5,
+      "groundSpeed": 1,
+      "waterSpeed": 2,
+      "antiGravitySpeed": 2,
+      "airSpeed": 2,
+      "groundHandling": 3,
+      "waterHandling": 3,
+      "antiGravityHandling": 4,
+      "airHandling": 2
+    }
+  }
+]
