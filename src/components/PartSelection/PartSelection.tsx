@@ -32,19 +32,17 @@ const PartSelection: React.FC<PartSelectionProps> = (props) => {
   const isFixed = () => {
     switch (props.selectedPartType) {
       case PartType.DRIVER:
-        return partContext.selectedDriverIsFixed;
+        return partContext.driverIsFixed;
       case PartType.BODY:
-        return partContext.selectedBodyIsFixed;
+        return partContext.bodyIsFixed;
       case PartType.TIRE:
-        return partContext.selectedTireIsFixed;
+        return partContext.tireIsFixed;
       case PartType.GLIDER:
-        return partContext.selectedGliderIsFixed;
+        return partContext.gliderIsFixed;
     }
   };
 
-  const toggleFixed = (type: PartType) => {
-    isFixed() ? partContext.unsetFixed(type) : partContext.setFixed(type);
-  };
+  const toggleFixed = (type: PartType) => partContext.toggleFixed(type);
 
   return (
     <div className="PartSelection">

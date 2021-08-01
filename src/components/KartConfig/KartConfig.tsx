@@ -56,28 +56,28 @@ export const KartConfig: React.FC = () => {
             selectedPart={partData.selectedDriver}
             selectedPartType={partListType(partData.drivers)}
             isSelected={isSelectedCategory(partData.drivers)}
-            isFixed={partData.selectedDriverIsFixed}
+            isFixed={partData.driverIsFixed}
             onClick={() => show(partData.drivers)}
           ></PartSelection>
           <PartSelection
             selectedPart={partData.selectedBody}
             selectedPartType={partListType(partData.bodies)}
             isSelected={isSelectedCategory(partData.bodies)}
-            isFixed={partData.selectedBodyIsFixed}
+            isFixed={partData.bodyIsFixed}
             onClick={() => show(partData.bodies)}
           ></PartSelection>
           <PartSelection
             selectedPart={partData.selectedTire}
             selectedPartType={partListType(partData.tires)}
             isSelected={isSelectedCategory(partData.tires)}
-            isFixed={partData.selectedTireIsFixed}
+            isFixed={partData.tireIsFixed}
             onClick={() => show(partData.tires)}
           ></PartSelection>
           <PartSelection
             selectedPart={partData.selectedGlider}
             selectedPartType={partListType(partData.gliders)}
             isSelected={isSelectedCategory(partData.gliders)}
-            isFixed={partData.selectedGliderIsFixed}
+            isFixed={partData.gliderIsFixed}
             onClick={() => show(partData.gliders)}
           ></PartSelection>
         </div>

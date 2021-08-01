@@ -1,9 +1,5 @@
 import React from 'react';
 import { Part, PartType } from '../classes/Part';
-import drivers from '../json/drivers.json';
-import bodies from '../json/bodies.json';
-import tires from '../json/tires.json';
-import gliders from '../json/gliders.json';
 import { Kart } from '../classes/Kart';
 
 export interface PartData {
@@ -15,14 +11,16 @@ export interface PartData {
   selectedBody: Part;
   selectedTire: Part;
   selectedGlider: Part;
-  selectedDriverIsFixed: boolean;
-  selectedBodyIsFixed: boolean;
-  selectedTireIsFixed: boolean;
-  selectedGliderIsFixed: boolean;
+  driverIsFixed: boolean;
+  bodyIsFixed: boolean;
+  tireIsFixed: boolean;
+  gliderIsFixed: boolean;
+  topKarts: Kart[];
+  topKartsLoaded: boolean;
   setPart: (part: Part, type: PartType) => void;
   setKart: (kart: Kart) => void;
-  setFixed: (type: PartType) => void;
-  unsetFixed: (type: PartType) => void;
+  setTopKarts: (topKarts: Kart[]) => void;
+  toggleFixed: (type: PartType) => void;
 }
 
 export const defaultPartData: PartData = {
@@ -34,14 +32,16 @@ export const defaultPartData: PartData = {
   selectedBody: new Part(),
   selectedTire: new Part(),
   selectedGlider: new Part(),
-  selectedDriverIsFixed: false,
-  selectedBodyIsFixed: false,
-  selectedTireIsFixed: false,
-  selectedGliderIsFixed: false,
+  driverIsFixed: false,
+  bodyIsFixed: false,
+  tireIsFixed: false,
+  gliderIsFixed: false,
+  topKarts: [],
+  topKartsLoaded: true,
   setPart: (part: Part, type: PartType) => console.log(part, type),
   setKart: (kart: Kart) => console.log(kart),
-  setFixed: (type: PartType) => console.log(type),
-  unsetFixed: (type: PartType) => console.log(type),
+  setTopKarts: (topKarts: Kart[]) => console.log(topKarts),
+  toggleFixed: (type: PartType) => console.log(type),
 };
 
 export const PartContext = React.createContext<PartData>(defaultPartData);
@@ -87,50 +87,22 @@ const PartProvider: React.FC = (props) => {
     });
   };
 
-  const setFixed = (type: PartType) => {
-    switch (type) {
-      case PartType.DRIVER:
-        setPartData((data) => {
-          return {
-            ...data,
-            selectedDriverIsFixed: true,
-          };
-        });
-        break;
-      case PartType.BODY:
-        setPartData((data) => {
-          return {
-            ...data,
-            selectedBodyIsFixed: true,
-          };
-        });
-        break;
-      case PartType.TIRE:
-        setPartData((data) => {
-          return {
-            ...data,
-            selectedTireIsFixed: true,
-          };
-        });
-        break;
-      case PartType.GLIDER:
-        setPartData((data) => {
-          return {
-            ...data,
-            selectedGliderIsFixed: true,
-          };
-        });
-        break;
-    }
-  };
+  const setTopKarts = (topKarts: Kart[]) => {
+    setPartData((data) => {
+      return {
+        ...data,
+        topKarts: topKarts
+      }
+    })
+  }
 
-  const unsetFixed = (type: PartType) => {
+  const toggleFixed = (type: PartType) => {
     switch (type) {
       case PartType.DRIVER:
         setPartData((data) => {
           return {
             ...data,
-            selectedDriverIsFixed: false,
+            driverIsFixed: !data.driverIsFixed,
           };
         });
         break;
@@ -138,7 +110,7 @@ const PartProvider: React.FC = (props) => {
         setPartData((data) => {
           return {
             ...data,
-            selectedBodyIsFixed: false,
+            bodyIsFixed: !data.bodyIsFixed,
           };
         });
         break;
@@ -146,7 +118,7 @@ const PartProvider: React.FC = (props) => {
         setPartData((data) => {
           return {
             ...data,
-            selectedTireIsFixed: false,
+            tireIsFixed: !data.tireIsFixed,
           };
         });
         break;
@@ -154,32 +126,83 @@ const PartProvider: React.FC = (props) => {
         setPartData((data) => {
           return {
             ...data,
-            selectedGliderIsFixed: false,
+            gliderIsFixed: !data.gliderIsFixed,
           };
         });
         break;
     }
-  };
+  }
+
+  const getPartList = async (endpoint: string): Promise<Part[]> => {
+    try {
+      const response = await fetch(endpoint, { method: 'GET' });
+      if (response.ok) {
+        return response.text().then(jsonString => JSON.parse(jsonString) as Part[])
+      } else {
+        return []
+      }
+    } catch {
+      return []
+    }
+  }
 
   React.useEffect(() => {
     setPartData({
-      drivers: drivers.map((driver) => Object.assign(new Part(), driver)),
-      bodies: bodies.map((body) => Object.assign(new Part(), body)),
-      tires: tires.map((tire) => Object.assign(new Part(), tire)),
-      gliders: gliders.map((glider) => Object.assign(new Part(), glider)),
-      selectedDriver: Object.assign(new Part(), drivers[0]),
-      selectedBody: Object.assign(new Part(), bodies[0]),
-      selectedTire: Object.assign(new Part(), tires[0]),
-      selectedGlider: Object.assign(new Part(), gliders[0]),
-      selectedDriverIsFixed: false,
-      selectedBodyIsFixed: false,
-      selectedTireIsFixed: false,
-      selectedGliderIsFixed: false,
+      drivers: [],
+      bodies: [],
+      tires: [],
+      gliders: [],
+      selectedDriver: new Part(),
+      selectedBody: new Part(),
+      selectedTire: new Part(),
+      selectedGlider: new Part(),
+      driverIsFixed: false,
+      bodyIsFixed: false,
+      tireIsFixed: false,
+      gliderIsFixed: false,
+      topKarts: [],
+      topKartsLoaded: true,
       setPart: setPart,
       setKart: setKart,
-      setFixed: setFixed,
-      unsetFixed: unsetFixed,
+      setTopKarts: setTopKarts,
+      toggleFixed: toggleFixed
     });
+    getPartList('/drivers').then(drivers =>
+      setPartData(data => {
+        return {
+          ...data,
+          drivers: drivers,
+          selectedDriver: drivers[0]
+        }
+      })
+    );
+    getPartList('/bodies').then(bodies => {
+      setPartData(data => {
+        return {
+          ...data,
+          bodies: bodies,
+          selectedBody: bodies[0]
+        }
+      })
+    })
+    getPartList('/tires').then(tires => {
+      setPartData(data => {
+        return {
+          ...data,
+          tires: tires,
+          selectedTire: tires[0],
+        }
+      })
+    })
+    getPartList('/gliders').then(gliders => {
+      setPartData(data => {
+        return {
+          ...data,
+          gliders: gliders,
+          selectedGlider: gliders[0]
+        }
+      })
+    })
   }, []);
 
   return (
