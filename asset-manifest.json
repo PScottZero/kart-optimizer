@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/kart-optimizer/static/css/main.1ba19573.chunk.css",
-    "main.js": "/kart-optimizer/static/js/main.b02f98cc.chunk.js",
-    "main.js.map": "/kart-optimizer/static/js/main.b02f98cc.chunk.js.map",
+    "main.css": "/kart-optimizer/static/css/main.97fac2bb.chunk.css",
+    "main.js": "/kart-optimizer/static/js/main.2871b7e0.chunk.js",
+    "main.js.map": "/kart-optimizer/static/js/main.2871b7e0.chunk.js.map",
     "runtime-main.js": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js",
     "runtime-main.js.map": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js.map",
     "static/js/2.72da42b3.chunk.js": "/kart-optimizer/static/js/2.72da42b3.chunk.js",
     "static/js/2.72da42b3.chunk.js.map": "/kart-optimizer/static/js/2.72da42b3.chunk.js.map",
     "index.html": "/kart-optimizer/index.html",
-    "static/css/main.1ba19573.chunk.css.map": "/kart-optimizer/static/css/main.1ba19573.chunk.css.map",
+    "static/css/main.97fac2bb.chunk.css.map": "/kart-optimizer/static/css/main.97fac2bb.chunk.css.map",
     "static/js/2.72da42b3.chunk.js.LICENSE.txt": "/kart-optimizer/static/js/2.72da42b3.chunk.js.LICENSE.txt",
     "static/media/MarioKart8.428361ae.webp": "/kart-optimizer/static/media/MarioKart8.428361ae.webp",
     "static/media/Header.scss": "/kart-optimizer/static/media/mario_kart_f2.0651abbb.ttf"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.bd26d0f5.js",
     "static/js/2.72da42b3.chunk.js",
-    "static/css/main.1ba19573.chunk.css",
-    "static/js/main.b02f98cc.chunk.js"
+    "static/css/main.97fac2bb.chunk.css",
+    "static/js/main.2871b7e0.chunk.js"
   ]
 }
