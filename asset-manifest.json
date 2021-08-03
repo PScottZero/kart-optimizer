@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/kart-optimizer/static/css/main.97fac2bb.chunk.css",
-    "main.js": "/kart-optimizer/static/js/main.607fbe7b.chunk.js",
-    "main.js.map": "/kart-optimizer/static/js/main.607fbe7b.chunk.js.map",
+    "main.js": "/kart-optimizer/static/js/main.127831dd.chunk.js",
+    "main.js.map": "/kart-optimizer/static/js/main.127831dd.chunk.js.map",
     "runtime-main.js": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js",
     "runtime-main.js.map": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js.map",
     "static/js/2.72da42b3.chunk.js": "/kart-optimizer/static/js/2.72da42b3.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.bd26d0f5.js",
     "static/js/2.72da42b3.chunk.js",
     "static/css/main.97fac2bb.chunk.css",
-    "static/js/main.607fbe7b.chunk.js"
+    "static/js/main.127831dd.chunk.js"
   ]
 }
