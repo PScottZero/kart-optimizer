@@ -4,5 +4,5 @@
     'header header'
     'kart-config sidebar';
   grid-template-rows: 6rem calc(100vh - 6rem);
-  grid-template-columns: calc(100vw - 34rem) 34rem;
+  grid-template-columns: calc(100% - 34rem) 34rem;
 }

@@ -19,8 +19,7 @@ class LoggerInterceptor : HandlerInterceptor {
     private val logger = LoggerFactory.getLogger(LoggerInterceptor::class.java)
 
     override fun preHandle(request: HttpServletRequest, response: HttpServletResponse, dataObject: Any) : Boolean {
-        logger.info("--> ${request.method} ${request.requestURI}")
-        logger.info("<-- ${response.status} ${getStatusLabel(response.status)}")
+        logger.info("${request.remoteHost} >>> ${request.method} ${request.requestURI} <<< ${response.status} ${getStatusLabel(response.status)}")
         return true
     }
 

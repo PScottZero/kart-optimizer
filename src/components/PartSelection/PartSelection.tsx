@@ -15,7 +15,9 @@ const PartSelection: React.FC<PartSelectionProps> = (props) => {
   const partContext = React.useContext(PartContext);
 
   const backgroundColor = (): string => {
-    return props.isSelected && props.selectedPart !== undefined ? '#26baff' : '#777';
+    return props.isSelected && props.selectedPart !== undefined
+      ? '#26baff'
+      : '#777';
   };
 
   const lockButtonColor = (): string => {
@@ -60,9 +62,15 @@ const PartSelection: React.FC<PartSelectionProps> = (props) => {
       <div
         className="PartLock"
         style={{ background: lockButtonColor() }}
-        onClick={() => props.selectedPart !== undefined ? toggleFixed(props.selectedPartType) : {}}
+        onClick={() =>
+          props.selectedPart !== undefined
+            ? toggleFixed(props.selectedPartType)
+            : {}
+        }
       >
-        <p className="PartLabel">{props.selectedPart !== undefined ? partName() : 'None'}</p>
+        <p className="PartLabel">
+          {props.selectedPart !== undefined ? partName() : 'None'}
+        </p>
       </div>
     </div>
   );

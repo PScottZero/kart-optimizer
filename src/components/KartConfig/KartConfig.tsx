@@ -82,19 +82,14 @@ export const KartConfig: React.FC = () => {
           ></PartSelection>
         </div>
         <div className="Separator"></div>
-        {
-          partList().length !== 0
-            ? <PartList
-                partList={partList()}
-                type={partListType(partList())}
-              ></PartList>
-            : <p className="NoBackend">
-                Backend is not running.<br/>
-                Please download the <a href="https://drive.google.com/file/d/1B-_u6OXax6jnumH9PEm9Pit_3ZycWg5m/view?usp=sharing">backend</a><br/>
-                then open a terminal in the same location as the downloaded .jar file
-                and run the command: <span>java -jar ./kart-optimizer-backend.jar</span>
-              </p>
-        }
+        {partList().length !== 0 ? (
+          <PartList
+            partList={partList()}
+            type={partListType(partList())}
+          ></PartList>
+        ) : (
+          <p className="NoBackend">Loading List...</p>
+        )}
       </div>
     </div>
   );

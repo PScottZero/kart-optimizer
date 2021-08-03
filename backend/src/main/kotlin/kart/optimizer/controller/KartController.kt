@@ -9,17 +9,12 @@ import org.springframework.web.bind.annotation.*
 import kotlin.math.abs
 
 @RestController
-@RequestMapping("/")
 class KartController {
     @Autowired
     private lateinit var kartConfig: KartConfig
 
-    @GetMapping("/")
-    fun getHome(): ResponseEntity<String> {
-        return ResponseEntity.ok("Kart Optimizer Backend")
-    }
-
     @GetMapping("/drivers")
+    @CrossOrigin(origins = ["*"])
     @ApiOperation("Return list of drivers")
     @ApiResponses(
         value = [
@@ -36,6 +31,7 @@ class KartController {
     }
 
     @GetMapping("/bodies")
+    @CrossOrigin(origins = ["*"])
     @ApiOperation("Return list of bodies")
     @ApiResponses(
         value = [
@@ -52,6 +48,7 @@ class KartController {
     }
 
     @GetMapping("/tires")
+    @CrossOrigin(origins = ["*"])
     @ApiOperation("Return list of tires")
     @ApiResponses(
         value = [
@@ -68,6 +65,7 @@ class KartController {
     }
 
     @GetMapping("/gliders")
+    @CrossOrigin(origins = ["*"])
     @ApiOperation("Return list of gliders")
     @ApiResponses(
         value = [
@@ -84,6 +82,7 @@ class KartController {
     }
 
     @PostMapping("/topKarts")
+    @CrossOrigin(origins = ["*"])
     @ApiOperation("Return list of top karts given constraints")
     @ApiResponses(
         value = [

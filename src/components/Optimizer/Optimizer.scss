@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 0 2rem;
   height: 26.452rem;
+  margin-bottom: 2rem;
 }
 
 .Options {
@@ -14,4 +15,11 @@
   padding: 1rem;
   background: #333;
   border-radius: 2rem;
+}
+
+.LoadingKarts {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  margin-top: 1rem;
 }

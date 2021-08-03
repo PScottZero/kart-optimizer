@@ -1,5 +1,5 @@
-import { StatNames } from "../providers/StatPriorityProvider";
-import { Part } from "./Part";
+import { StatNames } from '../providers/StatPriorityProvider';
+import { Part } from './Part';
 
 export class TopKartsRequest {
   constructor(

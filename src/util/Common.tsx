@@ -5,27 +5,27 @@ export const sumOfStats = (parts: Part[]): number[] => {
   return [
     adjustStat(
       parts
-        .map((part) => part !== undefined ? part.stats.groundSpeed : 0)
+        .map((part) => (part !== undefined ? part.stats.groundSpeed : 0))
         .reduce((sum, current) => sum + current)
     ),
     adjustStat(
       parts
-        .map((part) => part !== undefined ? part.stats.acceleration : 0)
+        .map((part) => (part !== undefined ? part.stats.acceleration : 0))
         .reduce((sum, current) => sum + current)
     ),
     adjustStat(
       parts
-        .map((part) => part !== undefined ? part.stats.weight : 0)
+        .map((part) => (part !== undefined ? part.stats.weight : 0))
         .reduce((sum, current) => sum + current)
     ),
     adjustStat(
       parts
-        .map((part) => part !== undefined ? part.stats.groundHandling : 0)
+        .map((part) => (part !== undefined ? part.stats.groundHandling : 0))
         .reduce((sum, current) => sum + current)
     ),
     adjustStat(
       parts
-        .map((part) => part !== undefined ? part.stats.offRoadTraction : 0)
+        .map((part) => (part !== undefined ? part.stats.offRoadTraction : 0))
         .reduce((sum, current) => sum + current)
     ),
   ];

@@ -11,9 +11,17 @@ const Optimizer: React.FC = () => {
     <div className="Optimizer">
       <StatPriority></StatPriority>
       <div className="Options">
-        {partContext.topKarts.map((kart, index) => (
-          <KartCombo key={`kart-${index}`} kart={kart}></KartCombo>
-        ))}
+        {partContext.topKartsLoaded ? (
+          partContext.topKarts.length === 0 ? (
+            <p className="LoadingKarts">Click "Generate Karts"</p>
+          ) : (
+            partContext.topKarts.map((kart, index) => (
+              <KartCombo key={`kart-${index}`} kart={kart}></KartCombo>
+            ))
+          )
+        ) : (
+          <p className="LoadingKarts">Loading Karts...</p>
+        )}
       </div>
     </div>
   );
