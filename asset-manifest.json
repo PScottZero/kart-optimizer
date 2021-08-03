@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.css": "/kart-optimizer/static/css/main.97fac2bb.chunk.css",
-    "main.js": "/kart-optimizer/static/js/main.127831dd.chunk.js",
-    "main.js.map": "/kart-optimizer/static/js/main.127831dd.chunk.js.map",
+    "main.css": "/kart-optimizer/static/css/main.082b27d9.chunk.css",
+    "main.js": "/kart-optimizer/static/js/main.87869ee4.chunk.js",
+    "main.js.map": "/kart-optimizer/static/js/main.87869ee4.chunk.js.map",
     "runtime-main.js": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js",
     "runtime-main.js.map": "/kart-optimizer/static/js/runtime-main.bd26d0f5.js.map",
-    "static/js/2.72da42b3.chunk.js": "/kart-optimizer/static/js/2.72da42b3.chunk.js",
-    "static/js/2.72da42b3.chunk.js.map": "/kart-optimizer/static/js/2.72da42b3.chunk.js.map",
+    "static/js/2.473071b6.chunk.js": "/kart-optimizer/static/js/2.473071b6.chunk.js",
+    "static/js/2.473071b6.chunk.js.map": "/kart-optimizer/static/js/2.473071b6.chunk.js.map",
     "index.html": "/kart-optimizer/index.html",
-    "static/css/main.97fac2bb.chunk.css.map": "/kart-optimizer/static/css/main.97fac2bb.chunk.css.map",
-    "static/js/2.72da42b3.chunk.js.LICENSE.txt": "/kart-optimizer/static/js/2.72da42b3.chunk.js.LICENSE.txt",
-    "static/media/MarioKart8.428361ae.webp": "/kart-optimizer/static/media/MarioKart8.428361ae.webp",
-    "static/media/Header.scss": "/kart-optimizer/static/media/mario_kart_f2.0651abbb.ttf"
+    "static/css/main.082b27d9.chunk.css.map": "/kart-optimizer/static/css/main.082b27d9.chunk.css.map",
+    "static/js/2.473071b6.chunk.js.LICENSE.txt": "/kart-optimizer/static/js/2.473071b6.chunk.js.LICENSE.txt",
+    "static/media/MarioKart8.428361ae.webp": "/kart-optimizer/static/media/MarioKart8.428361ae.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.bd26d0f5.js",
-    "static/js/2.72da42b3.chunk.js",
-    "static/css/main.97fac2bb.chunk.css",
-    "static/js/main.127831dd.chunk.js"
+    "static/js/2.473071b6.chunk.js",
+    "static/css/main.082b27d9.chunk.css",
+    "static/js/main.87869ee4.chunk.js"
   ]
 }
