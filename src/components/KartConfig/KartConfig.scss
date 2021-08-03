@@ -1,16 +1,29 @@
-.KartConfig {
-  grid-area: kart-config;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background: #222;
-}
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 
 .CenterContainer {
   width: 40rem;
   height: 44.25rem;
+}
+
+.KartConfig {
+  @include flexCenter;
+  @include fill;
+  grid-area: config;
+  background: $gray-2;
+}
+
+.NoBackend {
+  font-size: $text-medium;
+  text-align: center;
+  color: white;
+  line-height: 2;
+}
+
+.PartList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .PartOptions {
@@ -18,30 +31,9 @@
 }
 
 .Separator {
+  @include blue-red-gradient(-90deg);
   width: calc(100% - 1rem);
   height: 0.25rem;
-  background: linear-gradient(to right, #26baff, #f92470);
   border-radius: 1rem;
   margin: 1rem 0.5rem;
-}
-
-.NoBackend {
-  font-size: 24px;
-  text-align: center;
-  color: white;
-  line-height: 2;
-
-  span {
-    background: gray;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    white-space: nowrap;
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
-  }
-
-  a {
-    text-decoration: none;
-    color: #26baff;
-  }
 }

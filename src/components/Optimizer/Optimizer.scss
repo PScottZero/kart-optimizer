@@ -1,6 +1,15 @@
+@import '../../styles/variables.scss';
+
+.LoadingKarts {
+  text-align: center;
+  color: white;
+  font-size: $text-medium;
+  margin-top: 1rem;
+}
+
 .Optimizer {
   width: 100%;
-  background: #444;
+  background: $gray-4;
   box-sizing: border-box;
   padding: 0 2rem;
   height: 26.452rem;
@@ -13,13 +22,6 @@
   box-sizing: border-box;
   overflow-y: scroll;
   padding: 1rem;
-  background: #333;
+  background: $gray-3;
   border-radius: 2rem;
-}
-
-.LoadingKarts {
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  margin-top: 1rem;
 }
