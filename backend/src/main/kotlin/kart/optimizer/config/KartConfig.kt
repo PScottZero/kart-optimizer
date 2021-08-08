@@ -2,19 +2,21 @@ package kart.optimizer.config
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kart.optimizer.model.Kart
 import kart.optimizer.model.Part
 import org.springframework.context.annotation.Configuration
 
 @Configuration
 open class KartConfig {
-    var drivers: List<Part> = loadPartJson("/drivers.json")
-    var bodies: List<Part> = loadPartJson("/bodies.json")
-    var tires: List<Part> = loadPartJson("/tires.json")
-    var gliders: List<Part> = loadPartJson("/gliders.json")
+    var drivers: List<Part> = loadJson("/drivers.json")
+    var bodies: List<Part> = loadJson("/bodies.json")
+    var tires: List<Part> = loadJson("/tires.json")
+    var gliders: List<Part> = loadJson("/gliders.json")
+    var topKarts: List<Kart> = loadJson("/topKarts.json")
 
-    private fun loadPartJson(jsonFile: String): List<Part> {
+    private inline fun <reified T> loadJson(jsonFile: String): T {
         val jsonString = javaClass.getResource(jsonFile)?.readText() ?: "[]"
-        val type = object : TypeToken<List<Part>>(){}.type
+        val type = object : TypeToken<T>(){}.type
         return Gson().fromJson(jsonString, type)
     }
 }

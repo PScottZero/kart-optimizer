@@ -97,37 +97,21 @@ class KartController {
     fun getTopKarts(
         @RequestBody topKartsRequest: TopKartsRequest
     ): ResponseEntity<List<Kart>> {
-        val drivers = if (topKartsRequest.fixedDriver != null) {
-            listOf(topKartsRequest.fixedDriver)
-        } else kartConfig.drivers
-        val bodies: List<Part> = if (topKartsRequest.fixedBody != null) {
-            listOf(topKartsRequest.fixedBody)
-        } else kartConfig.bodies
-        val tires: List<Part> = if (topKartsRequest.fixedTire != null) {
-            listOf(topKartsRequest.fixedTire)
-        } else kartConfig.tires
-        val gliders: List<Part> = if (topKartsRequest.fixedGlider != null) {
-            listOf(topKartsRequest.fixedGlider)
-        } else kartConfig.gliders
-        val karts = ArrayList<Kart>()
-        drivers.forEach { driver ->
-            bodies.forEach { body ->
-                tires.forEach { tire ->
-                    gliders.forEach { glider ->
-                        karts.add(Kart(
-                            driver = driver,
-                            body = body,
-                            tire = tire,
-                            glider = glider
-                        ))
-                    }
-                }
-            }
-        }
-        karts.sortWith { kart1, kart2 ->
+        val karts = kartConfig.topKarts.sortedWith { kart1, kart2 ->
             compareStats(kart1, kart2, topKartsRequest.priorityStats, topKartsRequest.regularStats)
+        }.filter {
+            (topKartsRequest.fixedDriver == null || it.drivers.contains(topKartsRequest.fixedDriver)) &&
+                    (topKartsRequest.fixedBody == null || it.drivers.contains(topKartsRequest.fixedBody)) &&
+                    (topKartsRequest.fixedTire == null || it.drivers.contains(topKartsRequest.fixedTire)) &&
+                    (topKartsRequest.fixedGlider == null || it.drivers.contains(topKartsRequest.fixedGlider))
+        }.map {
+            it.drivers = it.drivers.filter { driver -> topKartsRequest.fixedDriver == null || topKartsRequest.fixedDriver == driver }
+            it.bodies = it.bodies.filter { body -> topKartsRequest.fixedBody == null || topKartsRequest.fixedBody == body }
+            it.tires = it.tires.filter { tire -> topKartsRequest.fixedTire == null || topKartsRequest.fixedTire == tire }
+            it.gliders = it.gliders.filter { glider -> topKartsRequest.fixedGlider == null || topKartsRequest.fixedGlider == glider }
+            it
         }
-        val endIndex = if (topKartsRequest.kartCount > karts.size) karts.size else topKartsRequest.kartCount
+        val endIndex = if (topKartsRequest.maxCount > karts.size) karts.size else topKartsRequest.maxCount
         return ResponseEntity.ok(karts.subList(0, endIndex))
     }
 

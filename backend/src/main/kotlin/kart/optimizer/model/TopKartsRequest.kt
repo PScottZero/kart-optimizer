@@ -5,14 +5,14 @@ import io.swagger.annotations.ApiModelProperty
 
 @ApiModel
 data class TopKartsRequest(
-    val fixedDriver: Part?,
-    val fixedBody: Part?,
-    val fixedTire: Part?,
-    val fixedGlider: Part?,
+    val fixedDriver: String?,
+    val fixedBody: String?,
+    val fixedTire: String?,
+    val fixedGlider: String?,
     @ApiModelProperty(example = "[\"Speed\", \"Acceleration\"]")
     val priorityStats: List<StatNames>,
     @ApiModelProperty(example = "[\"Weight\", \"Handling\", \"Traction\"]")
     val regularStats: List<StatNames>,
     @ApiModelProperty(example = "100")
-    val kartCount: Int
+    val maxCount: Int
 )

@@ -1,8 +1,4 @@
 
-g
-7src/main/kotlin/kart/optimizer/model/TopKartsRequest.kt,f\0\f01ea705185495777e6cd43d16ebd2751429ac1a
-\
-,src/main/kotlin/kart/optimizer/model/Kart.kt,b\6\b65050c64039ad2a66434580fd913edf74e0079f
 \
 ,src/main/kotlin/kart/optimizer/model/Part.kt,1\a\1a30d16049d2db343915eb92712293c96ecfa8b7
 ]
@@ -13,13 +9,7 @@ C
 build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-]
--src/main/kotlin/kart/optimizer/Application.kt,a\f\af593b03d43c38c9ea0983af499a29734e4820e8
-k
-;src/main/kotlin/kart/optimizer/controller/KartController.kt,3\c\3c152e77feaf34f6d67a542a4d9f6a44a1d898c6
-n
->src/main/kotlin/kart/optimizer/controller/DefaultController.kt,0\b\0b774499b7f69f9d9d4ec761a0daaacbdf6a4993
 e
 5src/main/kotlin/kart/optimizer/config/LoggerConfig.kt,b\9\b9a23e43b79c7dbfcab877fe3459196088e184a1
-c
-3src/main/kotlin/kart/optimizer/config/KartConfig.kt,0\b\0bebf5973d2b5b1d3813f112156477d86adf2963
+]
+-src/main/kotlin/kart/optimizer/Application.kt,a\f\af593b03d43c38c9ea0983af499a29734e4820e8
