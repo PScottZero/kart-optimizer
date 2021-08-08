@@ -1,0 +1,21 @@
+@mixin blue-red-gradient($direction: 0deg) {
+  background: linear-gradient($direction, #f92470, #26baff);
+}
+
+@mixin dimOnHover($amount: 70%, $transition: 0.2s) {
+  transition: $transition;
+  &:hover {
+    filter: brightness($amount);
+  }
+}
+
+@mixin fill {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flexCenter($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}

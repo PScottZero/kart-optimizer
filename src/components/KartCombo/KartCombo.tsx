@@ -10,8 +10,6 @@ interface KartComboProps {
 
 const KartCombo: React.FC<KartComboProps> = (props) => {
   const context = React.useContext(PartContext);
-
-  const stats: JSX.Element[] = [];
   const statLabels = ['S', 'A', 'W', 'H', 'T'];
   const statValues =
     props.kart.driver !== undefined
@@ -22,16 +20,6 @@ const KartCombo: React.FC<KartComboProps> = (props) => {
           props.kart.glider,
         ])
       : [];
-  statLabels.forEach((value, index) =>
-    stats.push(
-      <p key={`kart-combo-${index}`}>
-        {value}:{' '}
-        <span style={{ color: statColor(statValues[index]) }}>
-          {statValues[index]}
-        </span>
-      </p>
-    )
-  );
 
   return (
     <div className="KartCombo" onClick={() => context.setKart(props.kart)}>
@@ -49,7 +37,16 @@ const KartCombo: React.FC<KartComboProps> = (props) => {
           <img src={props.kart.glider.img} alt="Glider"></img>
         </div>
       </div>
-      <div className="Stats">{stats}</div>
+      <div className="Stats">
+        {statLabels.map((value, index) => (
+          <p key={`kart-combo-${index}`}>
+            {value}:{' '}
+            <span style={{ color: statColor(statValues[index]) }}>
+              {statValues[index]}
+            </span>
+          </p>
+        ))}
+      </div>
     </div>
   );
 };

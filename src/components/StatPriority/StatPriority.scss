@@ -1,48 +1,15 @@
-.StatPriority {
-  float: left;
-  width: 11rem;
-  height: 100%;
-  margin-right: 1rem;
-
-  button {
-    color: white;
-    border-radius: 1.5rem;
-    font-size: 20px;
-    text-align: center;
-    background: #777;
-    font-family: 'Prompt', Arial, sans-serif;
-    background: linear-gradient(45deg, #26baff, #f92470);
-    transition: 0.2s;
-    margin-top: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-
-    &:hover {
-      filter: brightness(70%);
-    }
-  }
-}
-
-.StatList {
-  box-sizing: border-box;
-  width: 100%;
-  background: #333;
-  padding: 1rem;
-  border-radius: 2rem;
-}
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 
 .Stat {
+  @include dimOnHover(90%, 0);
   color: white;
   border-radius: 1.5rem;
   padding: 0.5rem;
-  font-size: 20px;
+  font-size: $text-medium;
   text-align: center;
   margin: 1rem 0;
-  background: #777;
-
-  &:hover {
-    filter: brightness(90%);
-  }
+  background: $gray-7;
 
   &:first-child {
     margin-top: 0;
@@ -50,5 +17,33 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+.StatList {
+  box-sizing: border-box;
+  width: 100%;
+  background: $gray-3;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.StatPriority {
+  float: left;
+  width: 11rem;
+  height: 100%;
+  margin-right: 1rem;
+
+  button {
+    @include dimOnHover;
+    @include blue-red-gradient(-90deg);
+    color: white;
+    border-radius: 1.5rem;
+    font-size: $text-medium;
+    text-align: center;
+    font-family: $font-stack;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
   }
 }

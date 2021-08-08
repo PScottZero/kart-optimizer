@@ -1,8 +1,17 @@
-.Sidebar {
-  grid-area: sidebar;
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.KartStats {
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  background: #444;
+  height: 24rem;
+  padding: 2rem;
+}
+
+.Sidebar {
+  @include fill;
+  grid-area: sidebar;
+  box-sizing: border-box;
   overflow-y: scroll;
+  background: $gray-4;
 }
