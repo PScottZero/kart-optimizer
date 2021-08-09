@@ -1,18 +1,16 @@
 package kart.optimizer.model
 
-import io.swagger.annotations.ApiModel
-import io.swagger.annotations.ApiModelProperty
+import io.swagger.v3.oas.annotations.media.Schema
 
-@ApiModel
 data class TopKartsRequest(
     val fixedDriver: String?,
     val fixedBody: String?,
     val fixedTire: String?,
     val fixedGlider: String?,
-    @ApiModelProperty(example = "[\"Speed\", \"Acceleration\"]")
+    @Schema(example = "[\"Speed\", \"Acceleration\"]")
     val priorityStats: List<StatNames>,
-    @ApiModelProperty(example = "[\"Weight\", \"Handling\", \"Traction\"]")
+    @Schema(example = "[\"Weight\", \"Handling\", \"Traction\"]")
     val regularStats: List<StatNames>,
-    @ApiModelProperty(example = "100")
+    @Schema(example = "100")
     val maxCount: Int
 )

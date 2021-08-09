@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Part, PartType } from '../classes/Part';
-import { Kart } from '../classes/Kart';
+import { Kart, KartDto } from '../classes/Kart';
 import { TopKartsRequest } from '../classes/TopKartsRequest';
 
-const AWS_URL = 'http://kart-optimizer-backend.us-east-2.elasticbeanstalk.com';
+const AWS_URL = 'http://kart-optimizer-backend.us-east-2.elasticbeanstalk.com/optimizer/';
 
 export interface PartData {
   drivers: Part[];
@@ -84,10 +84,10 @@ const PartProvider: React.FC = (props) => {
     setPartData((data) => {
       return {
         ...data,
-        selectedDriver: kart.driver,
-        selectedBody: kart.body,
-        selectedTire: kart.tire,
-        selectedGlider: kart.glider,
+        selectedDriver: kart.driver[0],
+        selectedBody: kart.body[0],
+        selectedTire: kart.tire[0],
+        selectedGlider: kart.glider[0],
       };
     });
   };
@@ -150,7 +150,7 @@ const PartProvider: React.FC = (props) => {
     }
   };
 
-  const getTopKarts = async (request: TopKartsRequest) => {
+  const getTopKarts = useCallback(async (request: TopKartsRequest) => {
     setPartData((data) => {
       return {
         ...data,
@@ -169,7 +169,8 @@ const PartProvider: React.FC = (props) => {
       });
       if (response.ok) {
         response.text().then((jsonString) => {
-          const topKarts: Kart[] = JSON.parse(jsonString);
+          const topKartsDto: KartDto[] = JSON.parse(jsonString);
+          const topKarts = topKartsDto.map(kartDto => new Kart(kartDto, partData.drivers, partData.bodies, partData.tires, partData.gliders))
           setPartData((data) => {
             return {
               ...data,
@@ -182,7 +183,7 @@ const PartProvider: React.FC = (props) => {
     } catch {
       return;
     }
-  };
+  }, []);
 
   React.useEffect(() => {
     setPartData({
@@ -241,7 +242,7 @@ const PartProvider: React.FC = (props) => {
         };
       });
     });
-  }, []);
+  }, [getTopKarts]);
 
   return (
     <PartContext.Provider value={partData}>{children}</PartContext.Provider>
