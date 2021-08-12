@@ -9,6 +9,6 @@ export class TopKartsRequest {
     readonly fixedGlider: Part | null,
     readonly priorityStats: StatNames[],
     readonly regularStats: StatNames[],
-    readonly kartCount: number
+    readonly maxCount: number
   ) {}
 }

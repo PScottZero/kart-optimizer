@@ -3,6 +3,7 @@ package kart.optimizer.config
 import org.slf4j.LoggerFactory
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.servlet.HandlerInterceptor
+import org.springframework.web.servlet.ModelAndView
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 import javax.servlet.http.HttpServletRequest
@@ -19,14 +20,24 @@ class LoggerInterceptor : HandlerInterceptor {
     private val logger = LoggerFactory.getLogger(LoggerInterceptor::class.java)
 
     override fun preHandle(request: HttpServletRequest, response: HttpServletResponse, dataObject: Any) : Boolean {
-        logger.info("${request.remoteHost} >>> ${request.method} ${request.requestURI} <<< ${response.status} ${getStatusLabel(response.status)}")
+        logger.info("--> ${request.method} ${request.requestURI}")
         return true
+    }
+
+    override fun postHandle(
+        request: HttpServletRequest,
+        response: HttpServletResponse,
+        handler: Any,
+        modelAndView: ModelAndView?
+    ) {
+        logger.info("<-- ${response.status} ${getStatusLabel(response.status)}")
     }
 
     private fun getStatusLabel(status: Int): String {
         return when (status) {
             200 -> "OK"
-            400 -> "Not Found"
+            400 -> "Bad Request"
+            404 -> "Not Found"
             else -> "Unhandled Code"
         }
     }

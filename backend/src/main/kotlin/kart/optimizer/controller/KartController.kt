@@ -12,7 +12,6 @@ import kart.optimizer.util.KartComparator
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import kotlin.math.abs
 
 @RestController
 @RequestMapping("/optimizer/")
@@ -141,24 +140,33 @@ class KartController {
     fun getTopKarts(
         @RequestBody topKartsRequest: TopKartsRequest
     ): ResponseEntity<List<Kart>> {
-        val karts = kartConfig.topKarts.sortedWith(
-            KartComparator(
-                topKartsRequest.priorityStats,
-                topKartsRequest.regularStats
-            )
-        ).filter {
-            (topKartsRequest.fixedDriver == null || it.drivers.contains(topKartsRequest.fixedDriver)) &&
-                    (topKartsRequest.fixedBody == null || it.drivers.contains(topKartsRequest.fixedBody)) &&
-                    (topKartsRequest.fixedTire == null || it.drivers.contains(topKartsRequest.fixedTire)) &&
-                    (topKartsRequest.fixedGlider == null || it.drivers.contains(topKartsRequest.fixedGlider))
-        }.map {
-            it.drivers = it.drivers.filter { driver -> topKartsRequest.fixedDriver == null || topKartsRequest.fixedDriver == driver }
-            it.bodies = it.bodies.filter { body -> topKartsRequest.fixedBody == null || topKartsRequest.fixedBody == body }
-            it.tires = it.tires.filter { tire -> topKartsRequest.fixedTire == null || topKartsRequest.fixedTire == tire }
-            it.gliders = it.gliders.filter { glider -> topKartsRequest.fixedGlider == null || topKartsRequest.fixedGlider == glider }
-            it
+        val karts: ArrayList<Kart> = ArrayList()
+        val drivers = if (topKartsRequest.fixedDriver != null) listOf(topKartsRequest.fixedDriver) else kartConfig.drivers
+        val bodies = if (topKartsRequest.fixedBody != null) listOf(topKartsRequest.fixedBody) else kartConfig.bodies
+        val tires = if (topKartsRequest.fixedTire != null) listOf(topKartsRequest.fixedTire) else kartConfig.tires
+        val gliders = if (topKartsRequest.fixedGlider != null) listOf(topKartsRequest.fixedGlider) else kartConfig.gliders
+        drivers.forEach { driver ->
+            bodies.forEach { body ->
+                tires.forEach { tire ->
+                    gliders.forEach { glider ->
+                        karts.add(Kart(
+                            driver = driver,
+                            body = body,
+                            tire = tire,
+                            glider = glider
+                        ))
+                    }
+                }
+            }
         }
         val endIndex = if (topKartsRequest.maxCount > karts.size) karts.size else topKartsRequest.maxCount
-        return ResponseEntity.ok(karts.subList(0, endIndex))
+        return ResponseEntity.ok(
+            karts.sortedWith(
+                KartComparator(
+                    topKartsRequest.priorityStats,
+                    topKartsRequest.regularStats
+                )
+            ).subList(0, endIndex)
+        )
     }
 }

@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { Part, PartType } from '../classes/Part';
-import { Kart, KartDto } from '../classes/Kart';
+import { Kart } from '../classes/Kart';
 import { TopKartsRequest } from '../classes/TopKartsRequest';
 
-const AWS_URL = 'http://kart-optimizer-backend.us-east-2.elasticbeanstalk.com/optimizer/';
+const AWS_URL = 'http://kart-optimizer-backend.us-east-2.elasticbeanstalk.com/optimizer';
 
 export interface PartData {
   drivers: Part[];
@@ -84,10 +84,10 @@ const PartProvider: React.FC = (props) => {
     setPartData((data) => {
       return {
         ...data,
-        selectedDriver: kart.driver[0],
-        selectedBody: kart.body[0],
-        selectedTire: kart.tire[0],
-        selectedGlider: kart.glider[0],
+        selectedDriver: kart.driver,
+        selectedBody: kart.body,
+        selectedTire: kart.tire,
+        selectedGlider: kart.glider,
       };
     });
   };
@@ -169,8 +169,9 @@ const PartProvider: React.FC = (props) => {
       });
       if (response.ok) {
         response.text().then((jsonString) => {
-          const topKartsDto: KartDto[] = JSON.parse(jsonString);
-          const topKarts = topKartsDto.map(kartDto => new Kart(kartDto, partData.drivers, partData.bodies, partData.tires, partData.gliders))
+          console.log(request)
+          console.log(jsonString)
+          const topKarts: Kart[] = JSON.parse(jsonString);
           setPartData((data) => {
             return {
               ...data,

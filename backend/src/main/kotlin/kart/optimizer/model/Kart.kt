@@ -1,9 +1,9 @@
 package kart.optimizer.model
 
-data class Kart(
-    var drivers: List<String>,
-    var bodies: List<String>,
-    var tires: List<String>,
-    var gliders: List<String>,
-    val stats: Stats
+class Kart(
+    var driver: Part,
+    var body: Part,
+    var tire: Part,
+    var glider: Part,
+    val stats: Stats = Stats.sumOfStats(listOf(driver, body, tire, glider))
 )

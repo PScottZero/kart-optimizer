@@ -14,10 +14,10 @@ const KartCombo: React.FC<KartComboProps> = (props) => {
   const statValues =
     props.kart.driver !== undefined
       ? sumOfStats([
-          props.kart.driver[0],
-          props.kart.body[0],
-          props.kart.tire[0],
-          props.kart.glider[0],
+          props.kart.driver,
+          props.kart.body,
+          props.kart.tire,
+          props.kart.glider,
         ])
       : [];
 
@@ -25,16 +25,16 @@ const KartCombo: React.FC<KartComboProps> = (props) => {
     <div className="KartCombo" onClick={() => context.setKart(props.kart)}>
       <div className="Parts">
         <div className="KartComboPart">
-          <img src={props.kart.driver[0].img} alt="Driver"></img>
+          <img src={props.kart.driver.img} alt="Driver"></img>
         </div>
         <div className="KartComboPart">
-          <img src={props.kart.body[0].img} alt="Body"></img>
+          <img src={props.kart.body.img} alt="Body"></img>
         </div>
         <div className="KartComboPart">
-          <img src={props.kart.tire[0].img} alt="Tire"></img>
+          <img src={props.kart.tire.img} alt="Tire"></img>
         </div>
         <div className="KartComboPart">
-          <img src={props.kart.glider[0].img} alt="Glider"></img>
+          <img src={props.kart.glider.img} alt="Glider"></img>
         </div>
       </div>
       <div className="Stats">
