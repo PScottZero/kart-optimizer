@@ -3,7 +3,7 @@ import { Part, PartType } from '../classes/Part';
 import { Kart } from '../classes/Kart';
 import { TopKartsRequest } from '../classes/TopKartsRequest';
 
-const AWS_URL = 'http://kart-optimizer-backend.us-east-2.elasticbeanstalk.com/optimizer';
+const AWS_URL = 'http://kart-optimizer-backend.us-east-2.elasticbeanstalk.com/';
 
 export interface PartData {
   drivers: Part[];
@@ -131,7 +131,7 @@ const PartProvider: React.FC = (props) => {
 
   const getPartList = async (endpoint: string): Promise<Part[]> => {
     try {
-      const response = await fetch(AWS_URL + endpoint, {
+      const response = await fetch(`${AWS_URL}/parts/${endpoint}`, {
         method: 'GET',
         mode: 'cors',
         headers: {
@@ -158,7 +158,7 @@ const PartProvider: React.FC = (props) => {
       };
     });
     try {
-      const response = await fetch(`${AWS_URL}/topKarts`, {
+      const response = await fetch(`${AWS_URL}/optimizer/topKarts`, {
         method: 'POST',
         mode: 'cors',
         headers: {

@@ -1,16 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Kart Optimizer Backend</title>
-  </head>
-  <body style="display: flex; align-items: center; justify-content: center">
-    <div
-      style="text-align: center; font-family: Arial, sans-serif; line-height: 2"
-    >
-      <h1>Mario Kart 8 Backend</h1>
-      <h2>By Paul Scott</h2>
-      <a href="/swagger-ui/"><h3>Swagger Docs</h3></a>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Kart Optimizer Backend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: white;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      color: white;
+    }
+
+    h2 {
+      position: absolute;
+      text-decoration: none;
+      bottom: 2rem;
+    }
+
+    object {
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+    }
+
+    .app-id {
+      position: relative;
+      float: left;
+      height: 100%;
+      width: 24rem;
+      font-family: 'Prompt', Arial, sans-serif;
+    }
+
+    .app-id-image {
+      float: top;
+      width: 100%;
+      height: 30%;
+      background: url("/mario-kart-8.jpg") center;
+      background-size: cover;
+    }
+
+    .app-id-text {
+      float: bottom;
+      box-sizing: border-box;
+      padding: 2rem;
+      width: 100%;
+      height: 70%;
+      line-height: 1.5;
+      background: linear-gradient(135deg, #f92470, #26baff);
+    }
+
+    .swagger-ui {
+      float: right;
+      overflow: hidden;
+      width: calc(100% - 24rem);
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="app-id">
+  <div class="app-id-image"></div>
+  <div class="app-id-text">
+    <h1><a href="https://github.com/PScottZero/Numismatic">MK8 Kart Optimizer:</a> Backend</h1>
+    <h2>By Paul Scott</h2>
+  </div>
+</div>
+<div class="swagger-ui">
+  <object type="text/html" data="/swagger-ui.html">
+  </object>
+</div>
+</body>
 </html>
+
